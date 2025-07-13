@@ -1,0 +1,365 @@
+{
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Reach out to us and let's build something amazing together."
+  },
+  "team": [
+    {
+      "name": "Esmaeil",
+      "role": "Pactus GUI Manager & Flutter Team Lead",
+      "bio": "I am a Flutter and Android developer with 8+ years of experience, building scalable and production-grade apps in retail, fintech, and blockchain. I have led Flutter teams on 3+ products, focusing on clean architecture and modular implementations that reduced future development costs by 50%. As an active open-source contributor, I'm passionate about ensuring product success through technical excellence.",
+      "specialty": "UI Architecture • Modular Scaling • Blockchain GUI Integrations",
+      "avatar": "assets/images/esmaeil.png",
+      "education": "Associate Degree in Computer Software Engineering",
+      "contribution": "As the technical lead of Tarvix, I architect and deliver scalable Flutter and Android apps with clean, modular structures. I design and manage CI/CD pipelines and automated testing to ensure high-quality, efficient delivery. I mentor the team on UI/UX, cross-platform strategy, and integration to align product vision with technical excellence.",
+      "skills": [
+        {
+          "name": "Flutter",
+          "level": 95
+        },
+        {
+          "name": "Deployment: Test/CiCd/Automation",
+          "level": 85
+        },
+        {
+          "name": "Architecture: Clean/Mvvm/Layered",
+          "level": 85
+        },
+        {
+          "name": "UI,UX: Fluent/Material/Cupertino",
+          "level": 70
+        },
+        {
+          "name": "Java/Kotlin",
+          "level": 70
+        },
+        {
+          "name": "React/Javascript",
+          "level": 60
+        },
+        {
+          "name": "iOS/MacOs",
+          "level": 60
+        }
+      ],
+      "experience": [
+        "10+ Production-Grade Applications Deployed",
+        "8+ Years - Flutter/Android Developer",
+        "Retail (Grocery Apps), FinTech (Banking), Blockchain",
+        "3+ Product - Flutter Team Leader",
+        "Modular/CrosPlatform (50% Future Cost Reduction)",
+        "Active Open Source Contributor"
+      ],
+      "links": [
+        {
+          "icon": "fab fa-github",
+          "url": "https://github.com/esmaeil-ahmadipour",
+          "label": "GitHub"
+        },
+        {
+          "icon": "fab fa-linkedin",
+          "url": "https://www.linkedin.com/in/esmaeil-ahmadipour",
+          "label": "LinkedIn"
+        },
+        {
+          "icon": "fab fa-twitter",
+          "url": "https://twitter.com/ea2Dev",
+          "label": "Twitter"
+        },
+        {
+          "icon": "fab fa-medium",
+          "url": "https://medium.com/@ahmadipour",
+          "label": "Medium"
+        }
+      ]
+    },
+    {
+      "name": "Iman",
+      "role": "Fluttter Developer",
+      "bio": "",
+      "specialty": "",
+      "avatar": "assets/images/iman.png",
+      "education": "",
+      "contribution": "",
+      "skills": [
+        {
+          "name": "Flutter",
+          "level": 90
+        }
+      ],
+      "experience": [
+        "4+ years flutter development"
+      ],
+      "links": [
+        {
+          "icon": "fab fa-github",
+          "url": "https://github.com/iManYarahmadi",
+          "label": "GitHub"
+        },
+        {
+          "icon": "fab fa-linkedin",
+          "url": "https://www.linkedin.com/in/iman-yarahmadi-0b643a138/",
+          "label": "Linkedin"
+        },
+        {
+          "icon": "fab fa-twitter",
+          "url": "https://x.com/imanyarahmadi",
+          "label": "Twitter"
+        }
+      ]
+    }
+  ],
+  "about": {
+    "title": "About",
+    "subtitle": "Where blockchain meets beautiful interfaces",
+    "cards": [
+      {
+        "icon": "fa-rocket fa-fade",
+        "animation": "fa-fade",
+        "title": "Our Story",
+        "content": "Tarvix is a semi-independent dev team collaborating with Pactus blockchain. We specialize in Flutter and Fluent UI design systems."
+      },
+      {
+        "icon": "fa-gem fa-fade",
+        "animation": "fa-fade",
+        "title": "Our Values",
+        "items": [
+          "Exceptional UX focus",
+          "Development transparency",
+          "Highest security standards",
+          "Close blockchain collaboration"
+        ]
+      },
+      {
+        "icon": "fa-bullseye fa-beat-fade",
+        "animation": "fa-fade",
+        "title": "Our Mission",
+        "content": "To create seamless dApp & GUI experiences that hide blockchain complexity behind beautiful, intuitive interfaces.",
+        "tags": [
+          "Flutter",
+          "Fluent UI",
+          "Blockchain"
+        ]
+      }
+    ]
+  },
+  "techStack": {
+    "title": "Our Technology Stack",
+    "subtitle": "Cross-platform development solutions for all platforms",
+    "items": [
+      {
+        "icon": "fab fa-windows",
+        "name": "Windows Apps"
+      },
+      {
+        "icon": "fab fa-linux",
+        "name": "Linux Apps"
+      },
+      {
+        "icon": "fab fa-apple",
+        "name": "macOS Apps"
+      },
+      {
+        "icon": "fab fa-android",
+        "name": "Android Apps"
+      },
+      {
+        "icon": "fab fa-app-store-ios",
+        "name": "iOS Apps"
+      },
+      {
+        "icon": "fas fa-globe",
+        "name": "Web Applications"
+      },
+      {
+        "icon": "fas fa-mobile-alt",
+        "name": "PWA"
+      },
+      {
+        "icon": "fab fa-google",
+        "name": "Flutter"
+      },
+      {
+        "icon": "fab fa-js",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "fas fa-paint-brush",
+        "name": "Fluent UI"
+      },
+      {
+        "icon": "fas fa-palette",
+        "name": "Material Design"
+      },
+      {
+        "icon": "fab fa-apple",
+        "name": "Cupertino Design"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Pactus Node Managment",
+      "icon": "fas fa-chart-pie",
+      "description": "The Pactus GUI is a user-friendly graphical interface designed to simplify interaction with the Pactus Node Management system, allowing users to easily monitor node status, configure settings, and manage blockchain operations without needing deep technical knowledge.",
+      "projectType": "Official Project in Pactus Blockchain",
+      "goals": "Simplify deployment and unified management of blockchain nodes with an easy-to-use interface. Ensure secure, scalable operations integrated seamlessly into the Pactus ecosystem.",
+      "achievements": [
+        "100% optimization of release pipeline",
+        "100% completion of node setup and seed restoration",
+        "25% progress on node-to-server connectivity",
+        "Successfully tested with smooth performance on macOS, Windows, and Linux"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Windows App",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "MacOs App",
+          "value": "Interactive charts"
+        },
+        {
+          "name": "Linux App",
+          "value": "Interactive charts"
+        },
+        {
+          "name": "gRPC / Json-Rpc",
+          "value": "Real-time data"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/pactus-project/pactus-gui/",
+          "title": "Pactus GUI",
+          "icon": "fab fa-github"
+        },
+        {
+          "url": "https://github.com/pactus-project/pactus-gui-widgetbook/",
+          "title": "Pactus GUI WidgetBook",
+          "icon": "fab fa-github"
+        }
+      ],
+      "stats": [
+        {
+          "value": "4300+",
+          "label": "Accesses to node-server"
+        },
+        {
+          "value": "3",
+          "label": "Supported OS platforms"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil",
+          "role": "Flutter Team Lead / Pactus GUI Manager",
+          "avatar": "assets/images/esmaeil.png"
+        },
+        {
+          "name": "Iman",
+          "role": "Senior Flutter Developer",
+          "avatar": "assets/images/iman.png"
+        }
+      ],
+      "categories": [
+        "Linux Application",
+        "Windows Application",
+        "MacOs Application",
+        "Blockchain"
+      ]
+    }
+  ],
+  "footer": {
+    "description": "We build beautiful, high-performance Flutter interfaces for blockchain applications.",
+    "socialLinks": [
+      {
+        "icon": "fab fa-github",
+        "url": "#",
+        "label": "GitHub"
+      },
+      {
+        "icon": "fab fa-twitter",
+        "url": "#",
+        "label": "Twitter"
+      },
+      {
+        "icon": "fab fa-linkedin",
+        "url": "#",
+        "label": "LinkedIn"
+      },
+      {
+        "icon": "fab fa-telegram",
+        "url": "#",
+        "label": "Telegram"
+      }
+    ],
+    "quickLinks": [
+      {
+        "text": "Home",
+        "url": "#home"
+      },
+      {
+        "text": "About",
+        "url": "#about"
+      },
+      {
+        "text": "Team",
+        "url": "#team"
+      },
+      {
+        "text": "Projects",
+        "url": "#projects"
+      },
+      {
+        "text": "Contact",
+        "url": "#contact"
+      }
+    ],
+    "services": [
+      {
+        "text": "Flutter Development",
+        "url": "#"
+      },
+      {
+        "text": "Blockchain Integration",
+        "url": "#"
+      },
+      {
+        "text": "UI/UX Design",
+        "url": "#"
+      },
+      {
+        "text": "Smart Contracts",
+        "url": "#"
+      },
+      {
+        "text": "Web3 Consulting",
+        "url": "#"
+      }
+    ],
+    "contactInfo": [
+
+      {
+        "icon": "fas fa-envelope",
+        "text": "contact@tarvix.org"
+      }
+
+    ],
+    "legalLinks": [
+      {
+        "text": "Privacy Policy",
+        "url": "#"
+      },
+      {
+        "text": "Terms of Service",
+        "url": "#"
+      },
+      {
+        "text": "Cookie Policy",
+        "url": "#"
+      }
+    ],
+    "copyright": "© 2025 Tarvix Dev Team. All rights reserved."
+  }
+}
