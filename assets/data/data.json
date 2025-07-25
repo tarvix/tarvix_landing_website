@@ -9,7 +9,7 @@
       "role": "Pactus GUI Manager & Flutter Team Lead",
       "bio": "I am a Flutter and Android developer with 8+ years of experience, building scalable and production-grade apps in retail, fintech, and blockchain. I have led Flutter teams on 3+ products, focusing on clean architecture and modular implementations that reduced future development costs by 50%. As an active open-source contributor, I'm passionate about ensuring product success through technical excellence.",
       "specialty": "UI Architecture • Modular Scaling • Blockchain GUI Integrations",
-      "avatar": "assets/images/esmaeil.png",
+      "avatar": "assets/images/esmaeil.jpg",
       "education": "Associate Degree in Computer Software Engineering",
       "contribution": "As the technical lead of Tarvix, I architect and deliver scalable Flutter and Android apps with clean, modular structures. I design and manage CI/CD pipelines and automated testing to ensure high-quality, efficient delivery. I mentor the team on UI/UX, cross-platform strategy, and integration to align product vision with technical excellence.",
       "skills": [
@@ -78,7 +78,7 @@
       "role": "Fluttter Developer",
       "bio": "",
       "specialty": "",
-      "avatar": "assets/images/iman.png",
+      "avatar": "assets/images/iman.jpg",
       "education": "",
       "contribution": "",
       "skills": [
@@ -254,12 +254,12 @@
         {
           "name": "Esmaeil",
           "role": "Flutter Team Lead / Pactus GUI Manager",
-          "avatar": "assets/images/esmaeil.png"
+          "avatar": "assets/images/esmaeil.jpg"
         },
         {
           "name": "Iman",
           "role": "Senior Flutter Developer",
-          "avatar": "assets/images/iman.png"
+          "avatar": "assets/images/iman.jpg"
         }
       ],
       "categories": [
