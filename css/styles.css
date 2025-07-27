@@ -523,6 +523,48 @@ a:hover {
   background-color: var(--color-primary);
 }
 
+
+@media (max-width: 470px) {
+  /* --- Navbar Container --- */
+  .command-bar {
+    height: auto;
+    padding: var(--spacing-s) var(--spacing-m);
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  /* --- Navbar Items Container --- */
+  .command-bar-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to start/left */
+    gap: var(--spacing-m); /* Adjust gap as needed */
+  }
+
+  /* --- First Line Items --- */
+  .command-item:nth-child(1),
+  .command-item:nth-child(2),
+  .command-item:nth-child(3) {
+    flex: 0 0 auto; /* Prevent growing/shrinking */
+  }
+
+  /* --- Second Line Items --- */
+  .command-item:nth-child(4),
+  .command-item:nth-child(5) {
+    flex: 0 0 auto;
+    margin-top: var(--spacing-xs); /* Space between lines */
+  }
+
+  /* --- General Item Styling --- */
+  .command-item {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-s);
+    height: 36px;
+    white-space: nowrap;
+  }
+}
+
 /* ==================== */
 /* LOGO STYLES */
 /* ==================== */
@@ -1183,10 +1225,29 @@ body.light-theme .tag {
     justify-content: center;
   }
   
-  .command-bar {
-    padding: 0 var(--spacing-m);
+  @media (max-width: 768px) {
+  /* Hero section buttons container */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: var(--spacing-m); /* Add space between buttons */
+    width: 100%; /* Full width */
+    max-width: 280px; /* Optional: Set max width for better proportions */
+    margin-top: var(--spacing-l); /* Space above buttons */
   }
-  
+
+  /* Individual buttons */
+  .hero-buttons .btn {
+    width: 100%; /* Full width buttons */
+    justify-content: center; /* Center button text */
+    margin: 0; /* Remove any default margins */
+  }
+}
+
+.command-bar {
+  padding-left: 0; /* Or match your page's content padding */
+}
+
   .command-item {
     padding: var(--spacing-s);
     font-size: var(--font-size-xs);
@@ -1315,13 +1376,17 @@ body.light-theme .tag {
 /* IMPROVED TEAM CARD STYLES */
 /* ==================== */
 #team.section-static {
-  padding: var(--spacing-xxxxl) var(--spacing-xxl) var(--spacing-xxxxxl);
+  padding: var(--spacing-xxxxl) var(--spacing-xxl);
+  overflow: hidden; /* Prevent any potential overflow issues */
 }
 
 #teamContainer {
-  margin-top: var(--spacing-m);
-  gap: var(--spacing-xl);
-  padding: 0; /* اطمینان از عدم وجود پدینگ اضافی */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl); /* This adds space between grid items */
+  padding: var(--spacing-m); /* Add padding around the grid */
+  margin: 0 auto; /* Center the grid */
+  width: 100%; /* Ensure full width */
 }
 
 #team .col-12 {
@@ -1333,19 +1398,22 @@ body.light-theme .tag {
   gap: var(--spacing-m);
 }
 
-
 .team-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-l);
   background-color: var(--color-bg-card);
   border-radius: 4px;
-  box-shadow: var(--color-shadow); /* اضافه کردن سایه مشابه بقیه کارت‌ها */
-  border: 1px solid var(--color-border); /* اضافه کردن حاشیه مشابه بقیه کارت‌ها */
+  box-shadow: var(--color-shadow);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  gap: var(--spacing-s); /* Add gap between all child elements */
 }
 
 .team-card:hover {
@@ -1403,7 +1471,21 @@ body.light-theme .tag {
 }
 
 .team-view-btn {
-  margin-top: auto;
+  margin-top: auto; /* Pushes button to the bottom */
+  padding-top: var(--spacing-l); /* Fixed gap above button */
+  width: 100%; /* Ensures full-width alignment */
+}
+
+@media (max-width: 768px) {
+  #teamContainer {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: var(--spacing-l);
+    padding: var(--spacing-s);
+  }
+  
+  .team-card {
+    padding: var(--spacing-m);
+  }
 }
 
 /* ==================== */
@@ -1636,8 +1718,9 @@ body.light-theme .tag {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-xxl); /* Increased gap between cards */
   margin-top: var(--spacing-xxl);
+  padding: var(--spacing-m); /* Optional: Add padding to prevent edge crowding */
 }
 
 .about-card {
@@ -1648,13 +1731,15 @@ body.light-theme .tag {
   background-color: var(--color-bg-card);
   box-shadow: var(--color-shadow);
   height: 100%;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Prevent padding from expanding width */
+  margin: 0; /* Remove default margins */
 }
 
 .about-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-  box-shadow: 0 6px 12px rgba(var(--color-primary-rgb), 0.15), 
-              var(--neon-shadow);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(var(--color-primary-rgb), 0.15);
+  z-index: 1; /* Ensure hovered card appears above others */
 }
 
 .card-icon {
@@ -1687,6 +1772,18 @@ body.light-theme .tag {
 .about-card:hover .card-icon i {
   --fa-animation-duration: 2s;
   --fa-fade-opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: var(--spacing-l); /* Smaller gap on mobile */
+    padding: var(--spacing-s); /* Reduce padding on mobile */
+  }
+
+  .about-card {
+    padding: var(--spacing-xl); /* Smaller padding on mobile */
+  }
 }
 
 /* تنظیمات عمومی برای انیمیشن fade */

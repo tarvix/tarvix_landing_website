@@ -187,16 +187,16 @@ function setupProjectsFilter() {
 
   if (!projectsContainer || !projectsFilter || !appData.projects) return;
 
-  // استخراج دسته‌بندی‌های منحصر به فرد از پروژه‌ها
+  // Get distinct project categories for filtering
   const categories = new Set();
   appData.projects.forEach(project => {
     project.categories.forEach(category => categories.add(category));
   });
 
-  // پاک کردن تب‌های موجود و ایجاد تب‌های جدید
+  // Remove current tabs and generate fresh tab set
   projectsFilter.innerHTML = '';
 
-  // ایجاد تب "All Projects"
+  // Create 'All Projects' tab
   const allTab = document.createElement('a');
   allTab.href = '#';
   allTab.className = 'pivot-item active';
@@ -210,11 +210,11 @@ function setupProjectsFilter() {
     tab.href = '#';
     tab.className = 'pivot-item';
     tab.setAttribute('data-filter', category);
-    tab.textContent = category.charAt(0).toUpperCase() + category.slice(1); // تبدیل به حرف اول بزرگ
+    tab.textContent = category.charAt(0).toUpperCase() + category.slice(1); // Capitalize first letter
     projectsFilter.appendChild(tab);
   });
 
-  // تابع فیلتر کردن پروژه‌ها
+  // Project filtering function
   function filterProjects(filterValue) {
     const projects = projectsContainer.querySelectorAll('.col-4');
 
@@ -226,25 +226,26 @@ function setupProjectsFilter() {
     });
   }
 
-  // افزودن رویداد کلیک به تب‌ها
+  // Add click event to tabs
   projectsFilter.addEventListener('click', function (e) {
     const pivotItem = e.target.closest('.pivot-item');
     if (!pivotItem) return;
 
     e.preventDefault();
 
-    // به‌روزرسانی تب فعال
+    // Update active tab
     document.querySelectorAll('#projectsFilter .pivot-item').forEach(btn => {
       btn.classList.remove('active');
     });
     pivotItem.classList.add('active');
 
-    // فیلتر کردن پروژه‌ها
+    // Filter projects
     const filterValue = pivotItem.getAttribute('data-filter');
     filterProjects(filterValue);
   });
 
-  // مقداردهی اولیه با فیلتر "all"
+  // Initialize with "all" filter
+
   filterProjects('all');
 }
 
@@ -425,31 +426,31 @@ function renderTeamMembers() {
     const memberCard = document.createElement('div');
     memberCard.className = 'team-card';
 
-    // نمایش خلاصه بیو با حفظ خطوط و فاصله‌ها
+    // Display condensed bio with intact formatting
     const formatBioPreview = (bio) => {
       if (!bio) return '';
-      
-      // تبدیل خطوط به تگ‌های HTML با حفظ ساختار
+
+      // Convert lines to HTML tags while preserving structure
       const lines = bio.split('\n');
       let preview = '';
       let lineCount = 0;
-      
+
       for (let i = 0; i < lines.length && lineCount < 3; i++) {
         if (lines[i].trim() !== '') {
           preview += lines[i] + '<br>';
           lineCount++;
         }
       }
-      
+
       return preview;
     };
 
     const bioPreview = formatBioPreview(member.bio);
-    
-    const specialtyItems = member.specialty ? 
+
+    const specialtyItems = member.specialty ?
       member.specialty.split('•').map(item => item.trim()).filter(item => item) : [];
-    
-    const specialtyHTML = specialtyItems.map(item => 
+
+    const specialtyHTML = specialtyItems.map(item =>
       `<span>${item}</span>`
     ).join('');
 
@@ -490,7 +491,7 @@ function openTeamModal(member) {
   // Format bio with proper line breaks and styling
   const formatBio = (bio) => {
     if (!bio) return '';
-    
+
     return bio
       .replace(/\n\n/g, '</p><p class="bio-paragraph">') // Double newline becomes new paragraph
       .replace(/\n/g, '<br>') // Single newline becomes line break
@@ -600,11 +601,11 @@ function renderContactSection() {
   // Set contact header
   const contactTitle = document.getElementById('contactTitle');
   const contactSubtitle = document.getElementById('contactSubtitle');
-  
+
   if (contactTitle && appData.contact.title) {
     contactTitle.textContent = appData.contact.title;
   }
-  
+
   if (contactSubtitle && appData.contact.subtitle) {
     contactSubtitle.textContent = appData.contact.subtitle;
   }
@@ -837,7 +838,7 @@ function getTechIcon(techName) {
     'React': 'fab fa-react',
     // Add more mappings as needed
   };
-  
+
   return icons[techName] || 'fas fa-check-circle';
 }
 
