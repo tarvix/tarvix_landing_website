@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tarvix: Expert Web3 & Flutter development team with 8+ years experience building blockchain applications and high-performance mobile interfaces">
+  <meta name="description"
+    content="Tarvix: Expert Web3 & Flutter development team with 8+ years experience building blockchain applications and high-performance mobile interfaces">
   <meta name="keywords" content="Flutter development, Web3, blockchain, mobile apps, smart contracts, dApp development">
   <meta name="author" content="Tarvix Dev Team">
   <meta property="og:title" content="Tarvix | Web3 & Flutter Development Specialists">
-  <meta property="og:description" content="Professional Flutter and blockchain development team with real-world results across multiple industries">
+  <meta property="og:description"
+    content="Professional Flutter and blockchain development team with real-world results across multiple industries">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tarvix.org">
   <meta property="og:image" content="https://tarvix.org/assets/images/og-image.jpg">
@@ -126,37 +128,49 @@
     </div>
   </div>
 
-  <!-- Tech Stack Section (Matching Projects) -->
-  <section id="tech" class="section section section-static">
+  <!-- Technology Stack  -->
+  <section id="tech" class="section section-static">
     <div class="grid">
       <div class="col-12">
-        <h2 class="section-title">Our Technology Stack</h2>
-        <p class="section-subtitle" id="techStackSubtitle"></p>
-        <div class="tech-stack-grid" id="techStackContainer"></div>
+        <h2 class="section-title" id="techStackTitle">Our Technology Stack</h2>
+        <p class="section-subtitle" id="techStackSubtitle">Integrated tools for end-to-end development</p>
+
+        <!-- Carousel Container -->
+        <div class="tech-stack-carousel-container">
+          <!-- Carousels will be generated dynamically here -->
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Projects Section -->
   <section id="projects" class="section section-dynamic">
     <div class="grid">
       <div class="col-12">
         <h2 class="section-title">Our Projects</h2>
-
         <p class="section-subtitle">
           Here are some of our recent works in the Web3 space built with Flutter and Fluent UI design principles
         </p>
 
-        <div class="pivot tab-bar mt-6" id="projectsFilter">
-          <!-- Filter controls will be dynamically rendered here -->
+        <div class="projects-filter-container">
+          <div class="dropdown-filter">
+            <button class="dropdown-filter-toggle" id="filterToggle">
+              <span id="filterLabel">All Projects</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-filter-menu" id="projectsFilter">
+              <!-- Filter options will be dynamically rendered here -->
+            </ul>
+          </div>
         </div>
-        <div class="projects-grid projects-container" id="projectsContainer">
+
+        <div class="projects-container" id="projectsContainer">
           <!-- Projects will load dynamically here -->
         </div>
       </div>
     </div>
   </section>
-
 
 
 
@@ -221,83 +235,33 @@
     </div>
   </section>
 
-  <!-- Footer -->
+
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3 class="footer-heading">Tarvix</h3>
-        <p class="footer-description">
-          We build beautiful, high-performance Flutter interfaces for blockchain applications.
-        </p>
-        <div class="footer-social">
-          <a href="#" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="#" class="social-link" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="#" class="social-link" aria-label="Telegram">
-            <i class="fab fa-telegram"></i>
-          </a>
+    <div class="footer-container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Tarvix Logo">
+            <span>Tarvix</span>
+          </div>
+          <p class="footer-description">
+            We build beautiful, high-performance Flutter interfaces for blockchain applications.
+          </p>
+          <div class="footer-social" id="footerSocial">
+            <!-- Social links will be inserted here -->
+          </div>
         </div>
       </div>
 
-      <div class="footer-section">
-        <h3 class="footer-heading">Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#home" class="footer-link">Home</a></li>
-          <li><a href="#about" class="footer-link">About</a></li>
-          <li><a href="#team" class="footer-link">Team</a></li>
-          <li><a href="#projects" class="footer-link">Projects</a></li>
-          <li><a href="#contact" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3 class="footer-heading">Services</h3>
-        <ul class="footer-links">
-          <li><a href="#" class="footer-link">Flutter Development</a></li>
-          <li><a href="#" class="footer-link">Blockchain Integration</a></li>
-          <li><a href="#" class="footer-link">UI/UX Design</a></li>
-          <li><a href="#" class="footer-link">Smart Contracts</a></li>
-          <li><a href="#" class="footer-link">Web3 Consulting</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3 class="footer-heading">Contact Info</h3>
-        <ul class="footer-contact-info">
-          <li>
-            <i class="fas fa-map-marker-alt"></i>
-            <span>San Francisco, CA</span>
-          </li>
-          <li>
-            <i class="fas fa-envelope"></i>
-            <span>contact@tarvix.org</span>
-          </li>
-          <li>
-            <i class="fas fa-phone"></i>
-            <span>+1 (555) 123-4567</span>
-          </li>
-          <li>
-            <i class="fas fa-clock"></i>
-            <span>Mon-Fri: 9AM - 6PM</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="#" class="legal-link">Privacy Policy</a>
-        <a href="#" class="legal-link">Terms of Service</a>
-        <a href="#" class="legal-link">Cookie Policy</a>
-      </div>
-      <div class="footer-copyright">
-        &copy; 2025 Tarvix Dev Team. All rights reserved.
+      <!-- Bottom Row -->
+      <div class="footer-bottom">
+        <div class="footer-legal" id="footerLegal">
+          <!-- Legal links will be inserted here -->
+        </div>
+        <div class="footer-copyright" id="footerCopyright">
+          <!-- Copyright will be inserted here -->
+        </div>
       </div>
     </div>
   </footer>

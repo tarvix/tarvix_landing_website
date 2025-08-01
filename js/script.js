@@ -184,6 +184,8 @@ function renderAboutSection() {
 function setupProjectsFilter() {
   const projectsContainer = document.getElementById('projectsContainer');
   const projectsFilter = document.getElementById('projectsFilter');
+  const filterToggle = document.getElementById('filterToggle');
+  const filterLabel = document.getElementById('filterLabel');
 
   if (!projectsContainer || !projectsFilter || !appData.projects) return;
 
@@ -193,25 +195,40 @@ function setupProjectsFilter() {
     project.categories.forEach(category => categories.add(category));
   });
 
-  // Remove current tabs and generate fresh tab set
+  // Remove current options and generate fresh set
   projectsFilter.innerHTML = '';
 
-  // Create 'All Projects' tab
-  const allTab = document.createElement('a');
-  allTab.href = '#';
-  allTab.className = 'pivot-item active';
-  allTab.setAttribute('data-filter', 'all');
-  allTab.textContent = 'All Projects';
-  projectsFilter.appendChild(allTab);
+  // Create 'All Projects' option
+  const allOption = document.createElement('li');
+  const allFilter = document.createElement('a');
+  allFilter.className = 'filter-option active';
+  allFilter.setAttribute('data-filter', 'all');
+  allFilter.textContent = 'All Projects';
+  allOption.appendChild(allFilter);
+  projectsFilter.appendChild(allOption);
 
-  // ایجاد تب‌ها برای هر دسته‌بندی
+  // Create options for each category
   categories.forEach(category => {
-    const tab = document.createElement('a');
-    tab.href = '#';
-    tab.className = 'pivot-item';
-    tab.setAttribute('data-filter', category);
-    tab.textContent = category.charAt(0).toUpperCase() + category.slice(1); // Capitalize first letter
-    projectsFilter.appendChild(tab);
+    const option = document.createElement('li');
+    const filter = document.createElement('a');
+    filter.className = 'filter-option';
+    filter.setAttribute('data-filter', category);
+    filter.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    option.appendChild(filter);
+    projectsFilter.appendChild(option);
+  });
+
+  // Toggle dropdown
+  filterToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    projectsFilter.classList.toggle('show');
+    filterToggle.classList.toggle('active');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    projectsFilter.classList.remove('show');
+    filterToggle.classList.remove('active');
   });
 
   // Project filtering function
@@ -224,24 +241,31 @@ function setupProjectsFilter() {
 
       project.style.display = shouldShow ? 'block' : 'none';
     });
+
+    // Update active option and label
+    projectsFilter.querySelectorAll('.filter-option').forEach(option => {
+      option.classList.remove('active');
+    });
+    
+    const activeOption = projectsFilter.querySelector(`.filter-option[data-filter="${filterValue}"]`);
+    if (activeOption) {
+      activeOption.classList.add('active');
+      filterLabel.textContent = activeOption.textContent;
+    }
   }
 
-  // Add click event to tabs
-  projectsFilter.addEventListener('click', function (e) {
-    const pivotItem = e.target.closest('.pivot-item');
-    if (!pivotItem) return;
+  // Add click event to filter options
+  projectsFilter.addEventListener('click', function(e) {
+    const filterOption = e.target.closest('.filter-option');
+    if (!filterOption) return;
 
     e.preventDefault();
-
-    // Update active tab
-    document.querySelectorAll('#projectsFilter .pivot-item').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    pivotItem.classList.add('active');
-
-    // Filter projects
-    const filterValue = pivotItem.getAttribute('data-filter');
+    const filterValue = filterOption.getAttribute('data-filter');
     filterProjects(filterValue);
+    
+    // Close dropdown
+    projectsFilter.classList.remove('show');
+    filterToggle.classList.remove('active');
   });
 
   // Initialize with "all" filter
@@ -654,12 +678,17 @@ function renderProjects() {
 
   projectsContainer.innerHTML = '';
 
+  // Create projects grid container
+  const projectsGrid = document.createElement('div');
+  projectsGrid.className = 'projects-grid';
+  projectsContainer.appendChild(projectsGrid);
+
+  // Add all projects to the grid
   appData.projects.forEach(project => {
     const projectElement = document.createElement('div');
     projectElement.className = 'col-4';
     projectElement.setAttribute('data-tags', project.categories.join(' '));
 
-    // Generate tags HTML if they exist
     const tagsHTML = project.categories ? `
       <div class="project-tags">
         ${project.categories.map(tag => `<span class="tag">${tag}</span>`).join('')}
@@ -685,9 +714,51 @@ function renderProjects() {
       </div>
     `;
 
-    projectsContainer.appendChild(projectElement);
+    projectsGrid.appendChild(projectElement);
   });
+
+  // Add show more/less button
+  const showMoreBtn = document.createElement('button');
+  showMoreBtn.className = 'btn btn-outline show-more-btn';
+  showMoreBtn.innerHTML = '<i class="fas fa-chevron-down"></i> Show More Projects';
+  projectsContainer.appendChild(showMoreBtn);
+
+  // Toggle functionality
+  showMoreBtn.addEventListener('click', function() {
+    const isExpanded = projectsGrid.classList.toggle('expanded');
+    this.innerHTML = isExpanded 
+      ? '<i class="fas fa-chevron-up"></i> Show Less Projects' 
+      : '<i class="fas fa-chevron-down"></i> Show More Projects';
+    
+    // Update the gradient visibility
+    updateProjectsGradient();
+  });
+
+  // Function to update gradient based on theme
+  function updateProjectsGradient() {
+    const isExpanded = projectsGrid.classList.contains('expanded');
+    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--color-bg');
+    const rgbValues = bgColor.match(/\d+/g);
+    
+    if (rgbValues && !isExpanded) {
+      const gradient = `linear-gradient(to bottom, rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 0) 0%, rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 0.9) 100%)`;
+      projectsGrid.style.setProperty('--projects-gradient', gradient);
+    }
+  }
+
+  // Initialize gradient
+  updateProjectsGradient();
+
+  // Update gradient when theme changes
+  document.addEventListener('themeChanged', updateProjectsGradient);
+
+  // Initially hide projects after 1 second
+  setTimeout(() => {
+    projectsGrid.classList.remove('expanded');
+    updateProjectsGradient();
+  }, 1000);
 }
+
 
 function openProjectModal(project) {
   const modal = document.getElementById('projectModal');
@@ -845,100 +916,147 @@ function getTechIcon(techName) {
 function renderFooter() {
   if (!appData.footer) return;
 
-  // Social Links
-  const socialLinksHTML = appData.footer.socialLinks.map(link => `
-    <a href="${link.url}" class="social-link" aria-label="${link.label}">
-      <i class="${link.icon}"></i>
-    </a>
-  `).join('');
+  // Render social links
+  const socialContainer = document.getElementById('footerSocial');
+  if (socialContainer) {
+    socialContainer.innerHTML = appData.footer.socialLinks.map(link => `
+      <a href="${link.url}" class="social-link" aria-label="${link.label}">
+        <i class="${link.icon}"></i>
+      </a>
+    `).join('');
+  }
 
-  // Quick Links
-  const quickLinksHTML = appData.footer.quickLinks.map(link => `
-    <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
-  `).join('');
-
-  // Services
-  const servicesHTML = appData.footer.services.map(service => `
-    <li><a href="${service.url}" class="footer-link">${service.text}</a></li>
-  `).join('');
-
-  // Contact Info
-  const contactInfoHTML = appData.footer.contactInfo.map(info => `
-    <li>
-      <i class="${info.icon}"></i>
-      <span>${info.text}</span>
-    </li>
-  `).join('');
-
-  // Legal Links
-  const legalLinksHTML = appData.footer.legalLinks.map(link => `
-    <a href="${link.url}" class="legal-link">${link.text}</a>
-  `).join('');
-
-  // Update footer sections
-  const footer = document.querySelector('.footer');
-  if (footer) {
-    footer.innerHTML = `
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-heading">Tarvix</h3>
-          <p class="footer-description">${appData.footer.description}</p>
-          <div class="footer-social">${socialLinksHTML}</div>
-        </div>
-        
-        <div class="footer-section">
-          <h3 class="footer-heading">Quick Links</h3>
-          <ul class="footer-links">${quickLinksHTML}</ul>
-        </div>
-        
-        <div class="footer-section">
-          <h3 class="footer-heading">Services</h3>
-          <ul class="footer-links">${servicesHTML}</ul>
-        </div>
-        
-        <div class="footer-section">
-          <h3 class="footer-heading">Contact Info</h3>
-          <ul class="footer-contact-info">${contactInfoHTML}</ul>
-        </div>
+  // Render link groups
+  const linksContainer = document.getElementById('footerLinks');
+  if (linksContainer) {
+    linksContainer.innerHTML = `
+      <div class="footer-links-group">
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          ${appData.footer.quickLinks.map(link => `
+            <li><a href="${link.url}">${link.text}</a></li>
+          `).join('')}
+        </ul>
       </div>
       
-      <div class="footer-bottom">
-        <div class="footer-legal">${legalLinksHTML}</div>
-        <div class="footer-copyright">${appData.footer.copyright}</div>
+      <div class="footer-links-group">
+        <h4 class="footer-links-title">Contact</h4>
+        <ul class="footer-links">
+          ${appData.footer.contactInfo.map(info => `
+            <li>
+              <a href="${info.url || '#'}">
+                <i class="${info.icon}"></i> ${info.text}
+              </a>
+            </li>
+          `).join('')}
+        </ul>
       </div>
     `;
+  }
+
+  // Render legal links
+  const legalContainer = document.getElementById('footerLegal');
+  if (legalContainer) {
+    legalContainer.innerHTML = appData.footer.legalLinks.map(link => `
+      <a href="${link.url}" class="legal-link">${link.text}</a>
+    `).join('');
+  }
+
+  // Render copyright
+  const copyrightContainer = document.getElementById('footerCopyright');
+  if (copyrightContainer) {
+    copyrightContainer.textContent = appData.footer.copyright;
   }
 }
 
 function renderTechStack() {
-  // Set titles
-  const techStackTitle = document.getElementById('techStackTitle');
-  const techStackSubtitle = document.getElementById('techStackSubtitle');
-  const techStackContainer = document.getElementById('techStackContainer');
+  const techStackSection = document.getElementById('tech');
+  if (!techStackSection || !appData.techStack) return;
 
-  if (techStackTitle && appData.techStack?.title) {
-    techStackTitle.textContent = appData.techStack.title;
-  }
+  // Clear existing content
+  techStackSection.innerHTML = '';
 
-  if (techStackSubtitle && appData.techStack?.subtitle) {
-    techStackSubtitle.textContent = appData.techStack.subtitle;
-  }
+  // Create container
+  const container = document.createElement('div');
+  container.className = 'grid';
+  techStackSection.appendChild(container);
 
-  // Render items
-  if (techStackContainer && appData.techStack?.items) {
-    techStackContainer.innerHTML = '';
-    appData.techStack.items.forEach(tech => {
-      const techItem = document.createElement('div');
-      techItem.className = 'tech-item';
-      techItem.innerHTML = `
-        <i class="${tech.icon}"></i>
-        <span>${tech.name}</span>
+  // Create header
+  const header = document.createElement('div');
+  header.className = 'col-12';
+  header.innerHTML = `
+    <h2 class="section-title">Our Technology Stack</h2>
+    <p class="section-subtitle">Integrated tools for end-to-end development</p>
+  `;
+  container.appendChild(header);
+
+  // Create tech stack container
+  const techContainer = document.createElement('div');
+  techContainer.className = 'tech-stack-container';
+  container.appendChild(techContainer);
+
+  // Define categories in order we want them displayed
+  const categories = [
+    { id: 'frontend', title: 'Frontend', icon: 'fas fa-laptop-code' },
+    { id: 'backend', title: 'Backend', icon: 'fas fa-server' },
+    { id: 'design', title: 'Design', icon: 'fas fa-paint-brush' },
+    { id: 'infrastructure', title: 'DevOps & Infrastructure', icon: 'fas fa-cloud' },
+  ];
+
+  // Render each category
+  categories.forEach((category, index) => {
+    if (appData.techStack && appData.techStack[category.id]) {
+      // Category wrapper
+      const categoryWrapper = document.createElement('div');
+      categoryWrapper.className = 'tech-category-wrapper';
+      
+      // Category header
+      const categoryHeader = document.createElement('div');
+      categoryHeader.className = 'tech-category-header';
+      categoryHeader.innerHTML = `
+        <div class="category-title-container">
+          <i class="${category.icon}"></i>
+          <h3>${category.title}</h3>
+        </div>
       `;
-      techStackContainer.appendChild(techItem);
-    });
-  }
-}
+      categoryWrapper.appendChild(categoryHeader);
 
+      // Items container
+      const itemsContainer = document.createElement('div');
+      itemsContainer.className = 'tech-items-container';
+      
+      // Add tech items
+      appData.techStack[category.id].forEach(tech => {
+        const techItem = document.createElement('div');
+        techItem.className = 'tech-card';
+        techItem.innerHTML = `
+          <div class="tech-card-icon">
+            <i class="${tech.icon}"></i>
+          </div>
+          <div class="tech-card-name">${tech.name}</div>
+        `;
+        itemsContainer.appendChild(techItem);
+      });
+
+      categoryWrapper.appendChild(itemsContainer);
+      techContainer.appendChild(categoryWrapper);
+
+      // Add styled divider between categories (except after last one)
+      if (index < categories.length - 1) {
+        const divider = document.createElement('div');
+        divider.className = 'category-divider';
+        divider.innerHTML = `
+          <div class="divider-line"></div>
+          <div class="divider-icon">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+          <div class="divider-line"></div>
+        `;
+        techContainer.appendChild(divider);
+      }
+    }
+  });
+}
 
 // =====================
 // INITIALIZATION

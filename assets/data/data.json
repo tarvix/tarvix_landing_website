@@ -74,21 +74,50 @@
       ]
     },
     {
-      "name": "Iman",
-      "role": "Fluttter Developer",
-      "bio": "",
-      "specialty": "",
+      "name": "Iman Yarahmadi",
+      "role": "Flutter Developer",
+      "bio": "I am a skilled mobile developer with experience in both native Android and Flutter development. I specialize in creating robust, high-performance applications with clean architecture and optimized state management. With experience in fintech, education, and service industries, I focus on delivering seamless user experiences while keeping up with the latest Flutter techniques.",
+      "specialty": "State Management • Performance Optimization • Custom Package Development",
       "avatar": "assets/images/iman.jpg",
-      "education": "",
-      "contribution": "",
+      "education": "MSc in Computer Science | Software Engineering",
+      "contribution": "As a Flutter developer at Samim Solutions, I design and optimize features for the Daneshjouyar platform serving 50,000+ university students. I implement clean architecture, write comprehensive tests, and develop reusable UI components to maintain code quality and team productivity. I actively contribute to the Flutter community through open-source packages and technical articles.",
       "skills": [
         {
           "name": "Flutter",
           "level": 90
+        },
+        {
+          "name": "Dart",
+          "level": 85
+        },
+        {
+          "name": "State Management (Bloc, GetX, Riverpod)",
+          "level": 85
+        },
+        {
+          "name": "Clean Architecture",
+          "level": 80
+        },
+        {
+          "name": "Firebase Services",
+          "level": 75
+        },
+        {
+          "name": "Unit/Widget Testing",
+          "level": 70
+        },
+        {
+          "name": "Native Android",
+          "level": 65
         }
       ],
       "experience": [
-        "4+ years flutter development"
+        "3+ Years - Mobile Development Experience",
+        "50,000+ Active Users on Daneshjouyar Platform",
+        "FinTech (Banking Apps), Education, Service Industries",
+        "Published Custom Flutter Packages",
+        "Performance Optimization Specialist",
+        "Technical Writer on Flutter Development"
       ],
       "links": [
         {
@@ -98,15 +127,121 @@
         },
         {
           "icon": "fab fa-linkedin",
-          "url": "https://www.linkedin.com/in/iman-yarahmadi-0b643a138/",
-          "label": "Linkedin"
+          "url": "https://www.linkedin.com/in/iman-yarahmadi/",
+          "label": "LinkedIn"
         },
         {
-          "icon": "fab fa-twitter",
-          "url": "https://x.com/imanyarahmadi",
-          "label": "Twitter"
+          "icon": "fab fa-medium",
+          "url": "https://medium.com/@imanyarahmadi",
+          "label": "Medium"
+        },
+        {
+          "icon": "fas fa-box-open",
+          "url": "https://pub.dev/publishers/iman8.yarahmadi@gmail.com/packages",
+          "label": "Pub.dev"
+        },
+        {
+          "icon": "fas fa-store",
+          "url": "https://cafebazaar.ir/developer/440890869665",
+          "label": "CafeBazaar"
         }
       ]
+    },
+    {
+      "name": "Milad",
+      "role": "Backend Developer | Node.js(Nest.js)/Golang | Web3",
+      "bio": "Backend Developer with 3+ years of experience designing scalable microservices and high-uptime systems. I specialize in blockchain integration, real-time solutions, and secure architecture design. Proficient in CI/CD pipelines, message brokers, and performance optimization, I partner with teams to deliver robust backend systems that drive project success.",
+      "specialty": "Microservices Architecture • Blockchain Integration • High-Performance Systems",
+      "avatar": "assets/images/milad.jpg",
+      "education": "Blockchain Certification (Cyfrin Updraft)",
+      "contribution": "As a backend engineer, I design and implement scalable microservices architectures using Nest.js and Golang. I optimize system performance through CI/CD automation, database query optimization, and real-time communication solutions. My blockchain expertise enables secure integration of crypto payment systems and smart contracts into traditional backend infrastructures.",
+      "skills": [
+        {
+          "name": "Node.js/Nest.js",
+          "level": 95
+        },
+        {
+          "name": "Golang",
+          "level": 85
+        },
+        {
+          "name": "Microservices Architecture",
+          "level": 90
+        },
+        {
+          "name": "Docker & CI/CD",
+          "level": 85
+        },
+        {
+          "name": "Blockchain/Web3",
+          "level": 80
+        },
+        {
+          "name": "Message Brokers (Kafka/RabbitMQ)",
+          "level": 85
+        },
+        {
+          "name": "Database Optimization",
+          "level": 80
+        }
+      ],
+      "experience": [
+        "3+ Years Backend Development Experience",
+        "Scaled systems to 10,000+ concurrent users",
+        "Blockchain & Web3 Integration Specialist",
+        "Reduced API response times by 35% through query optimization",
+        "Containerized 12 microservices with Docker",
+        "Implemented real-time WebSocket solutions (<100ms latency)"
+      ],
+      "links": []
+    },
+    {
+      "name": "Sina Soujeh",
+      "role": "Product Designer",
+      "bio": "I am a multidisciplinary product designer with expertise in UI/UX design and design systems. With experience across education, finance, and enterprise applications, I create intuitive interfaces that bridge user needs with business goals. My background in computer engineering gives me technical insight that enhances my design solutions.",
+      "specialty": "Design Systems • Admin Panels • UX Research",
+      "avatar": "assets/images/sina.jpg",
+      "education": "Business Administration (Ongoing) & Computer Engineering (Tabriz University)",
+      "contribution": "As a Lead Product Designer at Samim Group, I create comprehensive design systems and oversee UI/UX for multiple admin panels and applications. I conduct user research, usability testing, and competitor analysis to deliver data-driven designs. My technical background enables effective collaboration with development teams to ensure design feasibility and implementation quality.",
+      "skills": [
+        {
+          "name": "Figma",
+          "level": 95
+        },
+        {
+          "name": "Adobe XD",
+          "level": 90
+        },
+        {
+          "name": "Design Systems",
+          "level": 85
+        },
+        {
+          "name": "User Research",
+          "level": 80
+        },
+        {
+          "name": "Prototyping (Protopie)",
+          "level": 75
+        },
+        {
+          "name": "UI Design",
+          "level": 90
+        },
+        {
+          "name": "UX Benchmarking",
+          "level": 80
+        }
+      ],
+      "experience": [
+        "Lead Product Designer at Samim Group",
+        "UI Designer at Synthetic Solutions (US-based)",
+        "UI/UX Designer at Tebyan Smart",
+        "10+ Admin Panel Designs Developed",
+        "3+ Custom Design Systems Created",
+        "Google UX Certified Professional"
+      ],
+      "links": []
     }
   ],
   "about": {
@@ -146,7 +281,7 @@
   "techStack": {
     "title": "Our Technology Stack",
     "subtitle": "Cross-platform development solutions for all platforms",
-    "items": [
+    "frontend": [
       {
         "icon": "fab fa-windows",
         "name": "Windows Apps"
@@ -194,6 +329,96 @@
       {
         "icon": "fab fa-apple",
         "name": "Cupertino Design"
+      }
+    ],
+    "backend": [
+      {
+        "icon": "fab fa-node-js",
+        "name": "Node.js/Nest.js"
+      },
+      {
+        "icon": "fas fa-code",
+        "name": "Golang"
+      },
+      {
+        "icon": "fas fa-database",
+        "name": "PostgreSQL"
+      },
+      {
+        "icon": "fas fa-database",
+        "name": "MySQL"
+      },
+      {
+        "icon": "fas fa-database",
+        "name": "MongoDB"
+      },
+      {
+        "icon": "fas fa-memory",
+        "name": "Redis"
+      },
+      {
+        "icon": "fab fa-ethereum",
+        "name": "Blockchain"
+      },
+      {
+        "icon": "fas fa-file-contract",
+        "name": "Smart Contracts"
+      },
+      {
+        "icon": "fas fa-coins",
+        "name": "TON Network"
+      },
+      {
+        "icon": "fas fa-server",
+        "name": "Microservices"
+      },
+      {
+        "icon": "fas fa-exchange-alt",
+        "name": "RabbitMQ/Kafka"
+      }
+    ],
+    "infrastructure": [
+      {
+        "icon": "fab fa-docker",
+        "name": "Docker"
+      },
+      {
+        "icon": "fas fa-code-branch",
+        "name": "Git"
+      },
+      {
+        "icon": "fas fa-vial",
+        "name": "Unit Testing"
+      },
+      {
+        "icon": "fas fa-check-double",
+        "name": "E2E Testing"
+      },
+      {
+        "icon": "fas fa-rocket",
+        "name": "CI/CD Pipelines"
+      }
+    ],
+    "design": [
+      {
+        "icon": "fab fa-figma",
+        "name": "Figma"
+      },
+      {
+        "icon": "fas fa-ad",
+        "name": "Adobe XD"
+      },
+      {
+        "icon": "fas fa-images",
+        "name": "Adobe Photoshop"
+      },
+      {
+        "icon": "fas fa-pen-fancy",
+        "name": "Adobe Illustrator"
+      },
+      {
+        "icon": "fas fa-mobile",
+        "name": "Protopie"
       }
     ]
   },
@@ -268,6 +493,1101 @@
         "MacOs Application",
         "Blockchain"
       ]
+    },
+    {
+      "title": "Daneshjouyar",
+      "icon": "fas fa-university",
+      "description": "A robust platform enhancing student life for over 50,000 Islamic Azad University students. Features include modules for food, dormitory, and insurance services, ensuring a seamless user experience.",
+      "projectType": "Official Project at Samim Solutions",
+      "goals": "Enhance student life through a comprehensive platform with optimized features and seamless performance.",
+      "achievements": [
+        "Customized packages like Jalali Flutter Date Picker and Fast Cached Image for enhanced functionality.",
+        "Implemented unit, widget, and BLoC tests to ensure robust code quality.",
+        "Boosted application performance using Flutter DevTools and Profile Mode.",
+        "Created reusable UI components with WidgetBook for consistency."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        },
+        {
+          "name": "Clean Architecture",
+          "value": "Code structure"
+        },
+        {
+          "name": "Bloc State Management",
+          "value": "State handling"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://pub.dev/packages/jalali_flutter_datepicker",
+          "title": "Jalali Flutter Date Picker",
+          "icon": "fas fa-box-open"
+        },
+        {
+          "url": "https://pub.dev/packages/fast_cached_network_image_plus",
+          "title": "Fast Cached Image",
+          "icon": "fas fa-box-open"
+        }
+      ],
+      "stats": [
+        {
+          "value": "50,000+",
+          "label": "Students served"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile Application",
+        "Education",
+        "Student Services"
+      ]
+    },
+    {
+      "title": "AFC 2023 Prediction App",
+      "icon": "fas fa-trophy",
+      "description": "An interactive app designed to enrich user participation and enjoyment during the AFC 2023 event with prediction features.",
+      "projectType": "Official Project at Noafarinan Dadeh Pardaz Savis",
+      "goals": "Enhance user engagement through interactive elements and real-time predictions.",
+      "achievements": [
+        "Developed interactive features to boost user participation.",
+        "Ensured seamless performance and user satisfaction."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        },
+        {
+          "name": "Firebase",
+          "value": "Analytics and Notifications"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile Application",
+        "Sports",
+        "Entertainment"
+      ]
+    },
+    {
+      "title": "Golrang Industrial Group Admin Panels",
+      "icon": "fas fa-industry",
+      "description": "Admin panels developed for Golrang Industrial Group to adapt seamlessly to backend shifts and streamline operations.",
+      "projectType": "Official Project at Noafarinan Dadeh Pardaz Savis",
+      "goals": "Provide flexible and efficient admin tools to manage backend workflows and enhance customer connections.",
+      "achievements": [
+        "Adapted seamlessly to backend changes without predefined models.",
+        "Streamlined operations with efficient order submissions."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        },
+        {
+          "name": "Clean Architecture",
+          "value": "Code structure"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Admin Panel",
+        "Industrial",
+        "B2B"
+      ]
+    },
+    {
+      "title": "Customer Club Apps",
+      "icon": "fas fa-wallet",
+      "description": "Loyalty wallet platforms and customer engagement tools developed for Gardeshgari Bank and Tobank Neobank to elevate user satisfaction and loyalty.",
+      "projectType": "Official Project at Noafarinan Dadeh Pardaz Savis",
+      "goals": "Enhance user engagement and loyalty through versatile apps and admin interfaces.",
+      "achievements": [
+        "Integrated features to heighten user engagement and loyalty.",
+        "Boosted usability and customer approval with sleek, responsive designs."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        },
+        {
+          "name": "Firebase",
+          "value": "Analytics and Notifications"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile Application",
+        "Fintech",
+        "Banking"
+      ]
+    },
+    {
+      "title": "Visitor App for Golrang",
+      "icon": "fas fa-users",
+      "description": "A visitor app developed for Golrang Industrial Group to enable efficient order submissions, streamlining operations similar to a delivery platform.",
+      "projectType": "Official Project at Noafarinan Dadeh Pardaz Savis",
+      "goals": "Streamline operations and enhance efficiency for visitors and order submissions.",
+      "achievements": [
+        "Enabled efficient order submissions for visitors.",
+        "Streamlined operations with a user-friendly interface."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile Application",
+        "Industrial",
+        "Visitor Management"
+      ]
+    },
+    {
+      "title": "Custom Flutter Packages",
+      "icon": "fas fa-box-open",
+      "description": "Custom Flutter packages enhancing date picking and image caching with tailored functionality.",
+      "projectType": "Open Source",
+      "goals": "Provide reusable solutions for Flutter developers to enhance date picking and image caching.",
+      "achievements": [
+        "Published on pub.dev for community use.",
+        "Tailored functionality to address specific project requirements."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://pub.dev/packages/jalali_flutter_datepicker",
+          "title": "Jalali Flutter Date Picker",
+          "icon": "fas fa-box-open"
+        },
+        {
+          "url": "https://pub.dev/packages/fast_cached_network_image_plus",
+          "title": "Fast Cached Image",
+          "icon": "fas fa-box-open"
+        }
+      ],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Iman Yarahmadi",
+          "role": "Package Developer",
+          "avatar": "assets/images/iman.jpg"
+        }
+      ],
+      "categories": [
+        "Open Source",
+        "Flutter Packages",
+        "Developer Tools"
+      ]
+    },
+    {
+      "title": "Admin Panel Microservices",
+      "icon": "fas fa-server",
+      "description": "A scalable microservices-based admin panel designed to improve management efficiency and enable real-time monitoring of 10+ services.",
+      "projectType": "Official Project",
+      "goals": "Enhance management efficiency and real-time monitoring capabilities through a robust microservices architecture.",
+      "achievements": [
+        "Developed 200+ comprehensive unit tests, increasing code coverage from 65% to 95%.",
+        "Reduced post-deployment bugs by 30%.",
+        "Containerized 12 microservices with Docker, cutting deployment time by 40%.",
+        "Migrated from Kafka to RabbitMQ, enhancing performance and reliability."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Nest.js",
+          "value": "Backend framework"
+        },
+        {
+          "name": "Docker",
+          "value": "Containerization"
+        },
+        {
+          "name": "RabbitMQ",
+          "value": "Message broker"
+        },
+        {
+          "name": "CI/CD",
+          "value": "Automated pipelines"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "10,000+",
+          "label": "Concurrent users supported"
+        },
+        {
+          "value": "95%",
+          "label": "Code coverage"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Milad",
+          "role": "Backend Engineer",
+          "avatar": "assets/images/milad.jpg"
+        }
+      ],
+      "categories": [
+        "Microservices",
+        "Admin Panel",
+        "Real-time Monitoring"
+      ]
+    },
+    {
+      "title": "TON Crypto Payment System",
+      "icon": "fas fa-money-bill-wave",
+      "description": "A revolutionary cryptocurrency payment solution using TON (The Open Network), offering user-friendly and flexible transactions.",
+      "projectType": "Official Project",
+      "goals": "Streamline cryptocurrency transactions with automated processes and enhanced security features.",
+      "achievements": [
+        "Automated consolidation of $50K+/month in transactions, cutting reconciliation time by 90%.",
+        "Implemented dynamic wallet generation for enhanced security and convenience.",
+        "Enabled customizable deposits for user flexibility."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Blockchain",
+          "value": "TON Network"
+        },
+        {
+          "name": "Solidity",
+          "value": "Smart contracts"
+        },
+        {
+          "name": "Web3",
+          "value": "Decentralized apps"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "$50K+",
+          "label": "Monthly transactions"
+        },
+        {
+          "value": "90%",
+          "label": "Reduction in reconciliation time"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Milad",
+          "role": "Backend Developer",
+          "avatar": "assets/images/milad.jpg"
+        }
+      ],
+      "categories": [
+        "Blockchain",
+        "Cryptocurrency",
+        "Payment System"
+      ]
+    },
+    {
+      "title": "ChatBuddy – AI-Powered Telegram Bot",
+      "icon": "fas fa-robot",
+      "description": "An AI-powered Telegram bot serving 50+ groups, processing 1,200+ messages daily with high accuracy and uptime.",
+      "projectType": "Official Project",
+      "goals": "Provide a reliable and scalable conversational AI solution for Telegram users.",
+      "achievements": [
+        "Engineered in Go for massive concurrency, serving tens of thousands of users with sub-50 ms response times.",
+        "Achieved 98% contextual accuracy and 99.9% uptime.",
+        "Implemented a fully automated CI/CD pipeline with GitHub Actions."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Golang",
+          "value": "Backend language"
+        },
+        {
+          "name": "Telegram API",
+          "value": "Bot integration"
+        },
+        {
+          "name": "CI/CD",
+          "value": "GitHub Actions"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "1,200+",
+          "label": "Daily messages processed"
+        },
+        {
+          "value": "99.9%",
+          "label": "Uptime"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Milad",
+          "role": "Backend Developer",
+          "avatar": "assets/images/milad.jpg"
+        }
+      ],
+      "categories": [
+        "AI",
+        "Chatbot",
+        "Telegram"
+      ]
+    },
+    {
+      "title": "WebSocket Notification System",
+      "icon": "fas fa-bell",
+      "description": "A real-time notification system engineered to deliver messages with low latency, enhancing user engagement.",
+      "projectType": "Official Project",
+      "goals": "Reduce latency and improve user engagement with real-time notifications.",
+      "achievements": [
+        "Delivered notifications with <100 ms latency for 500 concurrent users.",
+        "Boosted group engagement by 20% compared to polling-based solutions."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "WebSocket",
+          "value": "Real-time communication"
+        },
+        {
+          "name": "Nest.js",
+          "value": "Backend framework"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "500",
+          "label": "Concurrent users supported"
+        },
+        {
+          "value": "<100 ms",
+          "label": "Delivery latency"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Milad",
+          "role": "Backend Engineer",
+          "avatar": "assets/images/milad.jpg"
+        }
+      ],
+      "categories": [
+        "Real-time",
+        "Notifications",
+        "WebSocket"
+      ]
+    },
+    {
+      "title": "Database Query Optimization",
+      "icon": "fas fa-database",
+      "description": "Optimized database queries to enhance API performance and scalability for high-traffic applications.",
+      "projectType": "Official Project",
+      "goals": "Improve API response times and scalability for large user bases.",
+      "achievements": [
+        "Reduced API response times by 35%.",
+        "Enhanced scalability for 20,000+ monthly active users."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "PostgreSQL",
+          "value": "Database"
+        },
+        {
+          "name": "MySQL",
+          "value": "Database"
+        },
+        {
+          "name": "Redis",
+          "value": "Caching"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "35%",
+          "label": "Reduction in response times"
+        },
+        {
+          "value": "20,000+",
+          "label": "Monthly active users"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Milad",
+          "role": "Backend Developer",
+          "avatar": "assets/images/milad.jpg"
+        }
+      ],
+      "categories": [
+        "Database",
+        "Optimization",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Persian Ant Design System",
+      "icon": "fas fa-palette",
+      "description": "A custom design system developed for Samim Group to standardize UI components and ensure consistency across admin panels and applications.",
+      "projectType": "Official Project at Samim Group",
+      "goals": "Create a unified design language for all Samim Group products to improve usability and maintainability.",
+      "achievements": [
+        "Developed a comprehensive design system tailored for Persian language interfaces.",
+        "Ensured consistency across multiple admin panels and applications."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Adobe XD",
+          "value": "Prototyping"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "Lead Product Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Design System",
+        "UI/UX",
+        "Admin Panel"
+      ]
+    },
+    {
+      "title": "Financial Spanel",
+      "icon": "fas fa-chart-line",
+      "description": "An admin panel designed for financial management within Samim Group, providing tools for monitoring and analyzing financial data.",
+      "projectType": "Official Project at Samim Group",
+      "goals": "Streamline financial operations and provide real-time insights into financial data.",
+      "achievements": [
+        "Designed an intuitive interface for complex financial data visualization.",
+        "Improved user efficiency in financial monitoring tasks."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Protopie",
+          "value": "Interactive prototyping"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "Lead Product Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Admin Panel",
+        "Finance",
+        "UI/UX"
+      ]
+    },
+    {
+      "title": "Kouleh App Custom Design System",
+      "icon": "fas fa-mobile-alt",
+      "description": "A custom design system created for the Kouleh mobile application to ensure a cohesive and user-friendly experience.",
+      "projectType": "Official Project at Samim Group",
+      "goals": "Enhance user experience and maintain design consistency across the Kouleh app.",
+      "achievements": [
+        "Developed reusable UI components for faster development cycles.",
+        "Ensured a seamless user experience across all app screens."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Adobe Illustrator",
+          "value": "Vector graphics"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "Lead Product Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile App",
+        "Design System",
+        "UI/UX"
+      ]
+    },
+    {
+      "title": "Daneshjouyar Landing Page",
+      "icon": "fas fa-globe",
+      "description": "A landing page designed for Daneshjouyar, a platform serving students, to attract and inform potential users.",
+      "projectType": "Official Project at Samim Group",
+      "goals": "Create an engaging and informative landing page to drive user sign-ups and engagement.",
+      "achievements": [
+        "Designed a visually appealing and user-friendly interface.",
+        "Improved conversion rates through optimized layout and content structure."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Adobe Photoshop",
+          "value": "Image editing"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "Lead Product Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Web Design",
+        "Landing Page",
+        "UI/UX"
+      ]
+    },
+    {
+      "title": "Grass.io Spanel",
+      "icon": "fas fa-leaf",
+      "description": "An admin panel designed for Grass.io, a project under Synthetic Solutions, to manage and monitor platform operations.",
+      "projectType": "Official Project at Synthetic Solutions",
+      "goals": "Provide an efficient and intuitive interface for managing Grass.io platform operations.",
+      "achievements": [
+        "Designed a clean and functional admin interface.",
+        "Enhanced user productivity through streamlined workflows."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Adobe XD",
+          "value": "Prototyping"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "UI Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Admin Panel",
+        "UI/UX",
+        "Web Application"
+      ]
+    },
+    {
+      "title": "Hamdam App",
+      "icon": "fas fa-hands-helping",
+      "description": "A mobile application designed for Tebyan Smart, focusing on user engagement and support.",
+      "projectType": "Official Project at Tebyan Smart",
+      "goals": "Create a user-friendly app to enhance engagement and provide support services.",
+      "achievements": [
+        "Designed an intuitive and accessible user interface.",
+        "Conducted usability tests to refine the user experience."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Protopie",
+          "value": "Interactive prototyping"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "UI/UX Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Mobile App",
+        "UI/UX",
+        "Support Services"
+      ]
+    },
+    {
+      "title": "Dropzone Landing Page",
+      "icon": "fas fa-parachute-box",
+      "description": "A landing page designed for Dropzone, a project under Synthetic Solutions, to attract and inform users about the platform.",
+      "projectType": "Official Project at Synthetic Solutions",
+      "goals": "Drive user engagement and conversions through an appealing and informative landing page.",
+      "achievements": [
+        "Created a visually striking design to capture user attention.",
+        "Optimized layout for better user engagement and conversion rates."
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Figma",
+          "value": "Design tool"
+        },
+        {
+          "name": "Adobe Photoshop",
+          "value": "Image editing"
+        }
+      ],
+      "links": [],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Sina Soujeh",
+          "role": "UI Designer",
+          "avatar": "assets/images/sina.jpg"
+        }
+      ],
+      "categories": [
+        "Web Design",
+        "Landing Page",
+        "UI/UX"
+      ]
+    },
+    {
+      "title": "Mohsen Grocery Ecosystem",
+      "icon": "fas fa-shopping-basket",
+      "description": "Complete grocery management system including customer app, delivery tracking, warehouse tools, and Bluetooth receipt printing for chain stores.",
+      "projectType": "Official Project at Modiran Basirat",
+      "goals": "Streamline operations for grocery chains with integrated mobile solutions.",
+      "achievements": [
+        "Developed warehouse management application",
+        "Implemented Bixolon Bluetooth thermal printing",
+        "Created delivery tracking system",
+        "Built customer-facing shopping application"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform development"
+        },
+        {
+          "name": "Bixolon",
+          "value": "Bluetooth receipt printing"
+        },
+        {
+          "name": "Warehouse",
+          "value": "Inventory management"
+        },
+        {
+          "name": "Geolocation",
+          "value": "Delivery tracking"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://youtu.be/5iVI4JMDns4",
+          "title": "Demo Video",
+          "icon": "fab fa-youtube"
+        },
+        {
+          "url": "https://youtu.be/Qb2C59mF2XQ",
+          "title": "Grocery App Demo",
+          "icon": "fab fa-youtube"
+        }
+      ],
+      "stats": [
+        {
+          "value": "4",
+          "label": "Integrated modules"
+        },
+        {
+          "value": "100%",
+          "label": "Bluetooth print success rate"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Lead Flutter Developer",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Grocery",
+        "Retail",
+        "Logistics",
+        "Bluetooth"
+      ]
+    },
+    {
+      "title": "Investment School Online",
+      "icon": "fas fa-chart-line",
+      "description": "An educational platform for investment training, available on multiple platforms including Windows and Android.",
+      "projectType": "Freelance Project",
+      "goals": "Create accessible investment education across multiple platforms.",
+      "achievements": [
+        "Developed Windows and Android versions",
+        "Implemented auto-update functionality",
+        "Published on multiple app stores"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform framework"
+        },
+        {
+          "name": "Windows",
+          "value": "Desktop platform"
+        },
+        {
+          "name": "Auto-update",
+          "value": "Maintenance feature"
+        },
+        {
+          "name": "Multi-store",
+          "value": "Distribution"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://youtu.be/kIZy_YSflNQ",
+          "title": "Android Demo",
+          "icon": "fab fa-youtube"
+        },
+        {
+          "url": "https://youtu.be/IBaAcdm2Gek",
+          "title": "Windows Demo",
+          "icon": "fab fa-youtube"
+        }
+      ],
+      "stats": [],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Education",
+        "Finance",
+        "Multi-platform",
+        "Flutter"
+      ]
+    },
+    {
+      "title": "Flutter Open Source Packages",
+      "icon": "fas fa-box-open",
+      "description": "Collection of published Flutter packages providing various utilities including encryption, platform detection, glass UI effects, IP detection, and faded list animations.",
+      "projectType": "Open Source",
+      "goals": "Contribute to Flutter ecosystem with reusable components.",
+      "achievements": [
+        "Published 5 packages on pub.dev",
+        "Maintained MIT-licensed open source code",
+        "Supported multiple platforms (mobile/desktop/web)"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform framework"
+        },
+        {
+          "name": "Dart",
+          "value": "Programming language"
+        },
+        {
+          "name": "Encryption",
+          "value": "Security"
+        },
+        {
+          "name": "UI Effects",
+          "value": "Visual enhancements"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://pub.dev/publishers/ea2.dev/packages",
+          "title": "pub.dev Profile",
+          "icon": "fas fa-box-open"
+        }
+      ],
+      "stats": [
+        {
+          "value": "5",
+          "label": "Published packages"
+        },
+        {
+          "value": "MIT",
+          "label": "License"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Package Author",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Open Source",
+        "Flutter",
+        "Packages",
+        "Utilities"
+      ]
+    },
+    {
+      "title": "Mentor Educational App",
+      "icon": "fas fa-chalkboard-teacher",
+      "description": "A mobile learning platform with media-rich content and cross-platform support, developed for both Android and iOS.",
+      "projectType": "Freelance Project",
+      "goals": "Create engaging educational experience with offline capabilities.",
+      "achievements": [
+        "Added new features to existing codebase",
+        "Fixed critical issues for both platforms",
+        "Created comprehensive documentation",
+        "Optimized performance for media content"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform framework"
+        },
+        {
+          "name": "Media",
+          "value": "Content management"
+        },
+        {
+          "name": "Education",
+          "value": "Learning platform"
+        },
+        {
+          "name": "Documentation",
+          "value": "Code maintenance"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "2",
+          "label": "Supported platforms"
+        },
+        {
+          "value": "100%",
+          "label": "Critical issues resolved"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Education",
+        "E-learning",
+        "Cross-platform",
+        "Media"
+      ]
+    },
+    {
+      "title": "WinMarket Chain Store System",
+      "icon": "fas fa-store-alt",
+      "description": "A comprehensive solution for chain supermarkets including client apps, delivery management, and inventory control with Bluetooth printing capabilities.",
+      "projectType": "Official Project at Modiran Basirat",
+      "goals": "Digital transformation for supermarket chains with real-time inventory and order management.",
+      "achievements": [
+        "Developed multi-role applications (client/delivery/picker)",
+        "Implemented Bixolon Bluetooth thermal printing functionality",
+        "Created inventory management system with real-time sync",
+        "Built 80% of customer-facing application codebase"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform framework"
+        },
+        {
+          "name": "Bluetooth",
+          "value": "Bixolon printer integration"
+        },
+        {
+          "name": "Multi-role",
+          "value": "Client/Delivery/Picker apps"
+        },
+        {
+          "name": "Inventory",
+          "value": "Real-time management"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "3",
+          "label": "Application types"
+        },
+        {
+          "value": "80%",
+          "label": "Codebase contribution"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Lead Flutter Developer",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Retail",
+        "E-commerce",
+        "Inventory",
+        "Bluetooth"
+      ]
+    },
+    {
+      "title": "Bixolon Bluetooth Printing Module",
+      "icon": "fas fa-print",
+      "description": "Custom Flutter plugin for thermal receipt printing via Bixolon Bluetooth devices, integrated into multiple retail applications.",
+      "projectType": "Internal Tool Development",
+      "goals": "Enable reliable receipt printing across retail applications.",
+      "achievements": [
+        "Developed cross-platform Bluetooth printing solution",
+        "Implemented in WinMarket and Mohsen apps",
+        "Achieved 100% print success rate",
+        "Supported multiple receipt formats"
+      ],
+      "keyTechnologies": [
+        {
+          "name": "Flutter",
+          "value": "Cross-platform framework"
+        },
+        {
+          "name": "Bluetooth",
+          "value": "Device connectivity"
+        },
+        {
+          "name": "Bixolon SDK",
+          "value": "Printer integration"
+        },
+        {
+          "name": "Thermal",
+          "value": "Receipt printing"
+        }
+      ],
+      "links": [],
+      "stats": [
+        {
+          "value": "2",
+          "label": "Integrated projects"
+        },
+        {
+          "value": "100%",
+          "label": "Print reliability"
+        }
+      ],
+      "teamMembers": [
+        {
+          "name": "Esmaeil Ahmadipour",
+          "role": "Flutter Developer",
+          "avatar": "assets/images/esmaeil.jpg"
+        }
+      ],
+      "categories": [
+        "Bluetooth",
+        "Retail",
+        "Hardware",
+        "Flutter"
+      ]
     }
   ],
   "footer": {
@@ -275,22 +1595,22 @@
     "socialLinks": [
       {
         "icon": "fab fa-github",
-        "url": "#",
+        "url": "https://github.com/tarvix",
         "label": "GitHub"
       },
       {
-        "icon": "fab fa-twitter",
-        "url": "#",
-        "label": "Twitter"
+        "icon": "fab fa-x",
+        "url": "https://x.com/TarvixOfficial",
+        "label": "X"
       },
       {
         "icon": "fab fa-linkedin",
-        "url": "#",
+        "url": "https://www.linkedin.com/company/tarvix",
         "label": "LinkedIn"
       },
       {
         "icon": "fab fa-telegram",
-        "url": "#",
+        "url": "https://t.me/tarvix_official",
         "label": "Telegram"
       }
     ],
@@ -339,12 +1659,10 @@
       }
     ],
     "contactInfo": [
-
       {
         "icon": "fas fa-envelope",
         "text": "contact@tarvix.org"
       }
-
     ],
     "legalLinks": [
       {
