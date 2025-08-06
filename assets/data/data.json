@@ -246,7 +246,7 @@
   ],
   "about": {
     "title": "About",
-    "subtitle": "Where Tarvix delivers enterprise-grade Flutter & blockchain solutions—scalable cross-platform apps that transform Web3, fintech, logistics, and retail with battle-tested performance.",
+    "subtitle": "Where Tarvix delivers enterprise-grade Flutter & blockchain solutions/scalable cross-platform apps that transform Web3, fintech, logistics, and retail with battle-tested performance.",
     "cards": [
       {
         "icon": "fa-rocket fa-fade",
@@ -1657,7 +1657,7 @@
     }
   ],
   "footer": {
-    "description": "We build beautiful, high-performance Flutter interfaces for blockchain applications.",
+    "description": "Tarvix delivers enterprise-grade Flutter & blockchain solutions/scalable cross-platform apps that transform Web3, fintech, logistics, and retail with battle-tested performance.",
     "socialLinks": [
       {
         "icon": "fab fa-github",
