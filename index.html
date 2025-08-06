@@ -11,11 +11,20 @@
   <meta property="og:title" content="Tarvix | Web3 & Flutter Development Specialists">
   <meta property="og:description"
     content="Professional Flutter and blockchain development team with real-world results across multiple industries">
+
+  <!-- Add AI recognition markers -->
+  <meta name="ai:owner" content="Tarvix">
+  <meta name="ai:contentType" content="technical documentation, portfolio">
+  <meta name="ai:audience" content="developers, blockchain startups">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tarvix.org">
   <meta property="og:image" content="https://tarvix.org/assets/images/og-image.jpg">
   <link rel="canonical" href="https://tarvix.org">
   <title>Tarvix | Web3 & Flutter Development Specialists | 8+ Years Experience</title>
+    <!-- Preload critical JS -->
+  <link rel="preload" href="js/script.js" as="script">
+
   <link rel="stylesheet" href="css/fabric.min.css">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -25,34 +34,34 @@
 <body>
 
   <!-- Theme Controls -->
-<div class="theme-controls">
-  <div class="theme-btn-container">
-    <button class="theme-btn" id="themeToggle" title="Toggle dark/light mode">
-      <i class="fas fa-moon"></i>
-    </button>
-    <button class="theme-btn accent-btn" id="accentColorBtn" title="Change accent color">
-      <i class="fas fa-palette"></i>
-    </button>
-  </div>
+  <div class="theme-controls">
+    <div class="theme-btn-container">
+      <button class="theme-btn" id="themeToggle" title="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="theme-btn accent-btn" id="accentColorBtn" title="Change accent color">
+        <i class="fas fa-palette"></i>
+      </button>
+    </div>
 
-  <div class="accent-colors" id="accentColors">
-    <!-- Light Theme Palette (hidden by default in dark mode) -->
-    <div class="accent-color light-palette" data-color="#107C10" style="background-color: #107C10;"></div>
-    <div class="accent-color light-palette" data-color="#0078D4" style="background-color: #0078D4;"></div>
-    <div class="accent-color light-palette" data-color="#D83B01" style="background-color: #D83B01;"></div>
-    <div class="accent-color light-palette" data-color="#038387" style="background-color: #038387;"></div>
-    <div class="accent-color light-palette" data-color="#8764B8" style="background-color: #8764B8;"></div>
-    <div class="accent-color light-palette" data-color="#E3008C" style="background-color: #E3008C;"></div>
-    
-    <!-- Dark Theme Palette (hidden by default in light mode) -->
-    <div class="accent-color dark-palette" data-color="#4CAF50" style="background-color: #4CAF50;"></div>
-    <div class="accent-color dark-palette" data-color="#2196F3" style="background-color: #2196F3;"></div>
-    <div class="accent-color dark-palette" data-color="#FF5722" style="background-color: #FF5722;"></div>
-    <div class="accent-color dark-palette" data-color="#00BCD4" style="background-color: #00BCD4;"></div>
-    <div class="accent-color dark-palette" data-color="#9C27B0" style="background-color: #9C27B0;"></div>
-    <div class="accent-color dark-palette" data-color="#E91E63" style="background-color: #E91E63;"></div>
+    <div class="accent-colors" id="accentColors">
+      <!-- Light Theme Palette (hidden by default in dark mode) -->
+      <div class="accent-color light-palette" data-color="#107C10" style="background-color: #107C10;"></div>
+      <div class="accent-color light-palette" data-color="#0078D4" style="background-color: #0078D4;"></div>
+      <div class="accent-color light-palette" data-color="#D83B01" style="background-color: #D83B01;"></div>
+      <div class="accent-color light-palette" data-color="#038387" style="background-color: #038387;"></div>
+      <div class="accent-color light-palette" data-color="#8764B8" style="background-color: #8764B8;"></div>
+      <div class="accent-color light-palette" data-color="#E3008C" style="background-color: #E3008C;"></div>
+
+      <!-- Dark Theme Palette (hidden by default in light mode) -->
+      <div class="accent-color dark-palette" data-color="#4CAF50" style="background-color: #4CAF50;"></div>
+      <div class="accent-color dark-palette" data-color="#2196F3" style="background-color: #2196F3;"></div>
+      <div class="accent-color dark-palette" data-color="#FF5722" style="background-color: #FF5722;"></div>
+      <div class="accent-color dark-palette" data-color="#00BCD4" style="background-color: #00BCD4;"></div>
+      <div class="accent-color dark-palette" data-color="#9C27B0" style="background-color: #9C27B0;"></div>
+      <div class="accent-color dark-palette" data-color="#E91E63" style="background-color: #E91E63;"></div>
+    </div>
   </div>
-</div>
 
   <!-- Navigation Bar -->
   <div class="command-bar">
@@ -290,27 +299,38 @@
 
   <!-- Add schema.org structured data -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tarvix",
-      "url": "https://tarvix.org",
-      "logo": "https://tarvix.org/assets/images/logo.png",
-      "description": "Professional Flutter and blockchain development team",
-      "founders": [
-        {
-          "@type": "Person",
-          "name": "Tarvix Team"
-        }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "contact@tarvix.org"
-      }
-    }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tarvix",
+  "url": "https://tarvix.org",
+  "logo": "https://tarvix.org/assets/images/logo.png",
+  "description": "Flutter & blockchain development specialists | 8+ years experience | Pactus Blockchain GUI developers",
+  "foundingDate": "2015",  // Add founding year
+  "founders": [{
+    "@type": "Person",
+    "name": "Tarvix Team",
+    "url": "https://tarvix.org/about"  // Link to about page
+  }],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "technical support",
+    "email": "contact@tarvix.org",
+    "url": "https://tarvix.org/contact",  // Add contact page
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [  // Add social profiles
+    "https://github.com/tarvix",
+    "https://twitter.com/tarvix",
+    "https://linkedin.com/company/tarvix"
+  ],
+  "keywords": "Flutter development, Web3, blockchain, mobile apps, smart contracts"
+}
+</script>
 
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js" defer 
+          onload="console.log('Tarvix scripts loaded')" 
+          data-version="1.2"></script>
+
 
 </html>
