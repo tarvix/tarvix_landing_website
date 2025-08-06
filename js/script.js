@@ -968,9 +968,15 @@ function getTechIcon(techName) {
 function renderFooter() {
   if (!appData.footer) return;
 
+  // Render footer description
+  const descriptionContainer = document.querySelector('.footer-description');
+  if (descriptionContainer && appData.footer.description) {
+    descriptionContainer.textContent = appData.footer.description;
+  }
+
   // Render social links
   const socialContainer = document.getElementById('footerSocial');
-  if (socialContainer) {
+  if (socialContainer && appData.footer.socialLinks) {
     socialContainer.innerHTML = appData.footer.socialLinks.map(link => `
       <a href="${link.url}" class="social-link" aria-label="${link.label}">
         <i class="${link.icon}"></i>
@@ -980,10 +986,10 @@ function renderFooter() {
 
   // Render link groups
   const linksContainer = document.getElementById('footerLinks');
-  if (linksContainer) {
+  if (linksContainer && appData.footer.quickLinks && appData.footer.contactInfo) {
     linksContainer.innerHTML = `
       <div class="footer-links-group">
-        <h4 class="footer-links-title">Quick Links</h4>
+        <h4 class="footer-links-title">${appData.footer.quickLinksTitle || 'Quick Links'}</h4>
         <ul class="footer-links">
           ${appData.footer.quickLinks.map(link => `
             <li><a href="${link.url}">${link.text}</a></li>
@@ -992,7 +998,7 @@ function renderFooter() {
       </div>
       
       <div class="footer-links-group">
-        <h4 class="footer-links-title">Contact</h4>
+        <h4 class="footer-links-title">${appData.footer.contactTitle || 'Contact'}</h4>
         <ul class="footer-links">
           ${appData.footer.contactInfo.map(info => `
             <li>
@@ -1008,7 +1014,7 @@ function renderFooter() {
 
   // Render legal links
   const legalContainer = document.getElementById('footerLegal');
-  if (legalContainer) {
+  if (legalContainer && appData.footer.legalLinks) {
     legalContainer.innerHTML = appData.footer.legalLinks.map(link => `
       <a href="${link.url}" class="legal-link">${link.text}</a>
     `).join('');
@@ -1016,7 +1022,7 @@ function renderFooter() {
 
   // Render copyright
   const copyrightContainer = document.getElementById('footerCopyright');
-  if (copyrightContainer) {
+  if (copyrightContainer && appData.footer.copyright) {
     copyrightContainer.textContent = appData.footer.copyright;
   }
 }
