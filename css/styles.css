@@ -1394,11 +1394,14 @@ body.light-theme .tag {
 /* Color Picker Container */
 .accent-colors {
   display: none;
-  position: fixed; /* Changed from absolute to fixed */
+  position: fixed;
+  /* Changed from absolute to fixed */
   bottom: auto;
   top: auto;
-  right: 20px; /* Adjusted from 0 to 20px */
-  max-height: calc(100vh - 20px); /* Ensure it doesn't exceed viewport height */
+  right: 20px;
+  /* Adjusted from 0 to 20px */
+  max-height: calc(100vh - 20px);
+  /* Ensure it doesn't exceed viewport height */
   overflow-y: auto;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -1410,14 +1413,17 @@ body.light-theme .tag {
   box-shadow: var(--shadow-lg);
   margin-top: 8px;
   /* Smart positioning */
-  max-width: calc(100vw - 40px); /* Ensure it doesn't exceed viewport width */
-  transform: translateY(10px); /* Small offset from button */
+  max-width: calc(100vw - 40px);
+  /* Ensure it doesn't exceed viewport width */
+  transform: translateY(10px);
+  /* Small offset from button */
 }
 
 /* Position the palette above button if near bottom */
 @media (max-height: 600px) {
   .accent-colors {
-    bottom: 60px; /* Position above button */
+    bottom: 60px;
+    /* Position above button */
     top: auto;
   }
 }
@@ -1449,8 +1455,15 @@ body.light-theme .tag {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Color chips styling (same as before) */
@@ -1694,17 +1707,28 @@ body.light-theme .tag {
   border-radius: 4px;
   transition: all 0.2s ease;
 }
-
-.project-card .btn-primary {
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
+/* Add this to your styles.css */
+.project-links .btn {
+  transition: all 0.2s ease;
 }
 
-.project-card .btn-primary:hover {
+/* Primary button hover states */
+.project-links .btn-primary:hover {
   background-color: var(--color-primary-darken);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white !important; /* Force white text on hover */
+  border-color: var(--color-primary-darken);
+}
+
+/* Outline button hover states */
+.project-links .btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white !important;
+  border-color: var(--color-primary);
+}
+
+/* Icon color fix */
+.project-links .btn:hover i {
+  color: inherit !important;
 }
 
 .project-card {

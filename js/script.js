@@ -866,20 +866,20 @@ function openProjectModal(project) {
     </div>
   ` : '';
 
-  // Generate links HTML
-  const linksHTML = project.links ? `
-    <div class="project-section">
-      <h4>Project Links</h4>
-      <div class="project-links">
-        ${project.links.map(link => `
-          <a href="${link.url}" class="btn ${link.icon.includes('github') ? 'btn-outline' : 'btn-primary'}" target="_blank" rel="noopener noreferrer">
-            <i class="${link.icon}"></i>
-            ${link.title}
-          </a>
-        `).join('')}
-      </div>
+// Generate links HTML
+const linksHTML = project.links ? `
+  <div class="project-section">
+    <h4>Project Links</h4>
+    <div class="project-links">
+      ${project.links.map(link => `
+        <a href="${link.url}" class="btn ${link.icon.includes('github') ? 'btn-outline' : 'btn-primary'}" target="_blank" rel="noopener noreferrer">
+          <i class="${link.icon}"></i>
+          <span class="btn-text">${link.title}</span>
+        </a>
+      `).join('')}
     </div>
-  ` : '';
+  </div>
+` : '';
 
   // Set modal content
   modalContent.innerHTML = `
