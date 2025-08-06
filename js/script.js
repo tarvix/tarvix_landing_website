@@ -219,14 +219,14 @@ function setupProjectsFilter() {
   });
 
   // Toggle dropdown
-  filterToggle.addEventListener('click', function(e) {
+  filterToggle.addEventListener('click', function (e) {
     e.stopPropagation();
     projectsFilter.classList.toggle('show');
     filterToggle.classList.toggle('active');
   });
 
   // Close dropdown when clicking outside
-  document.addEventListener('click', function() {
+  document.addEventListener('click', function () {
     projectsFilter.classList.remove('show');
     filterToggle.classList.remove('active');
   });
@@ -246,7 +246,7 @@ function setupProjectsFilter() {
     projectsFilter.querySelectorAll('.filter-option').forEach(option => {
       option.classList.remove('active');
     });
-    
+
     const activeOption = projectsFilter.querySelector(`.filter-option[data-filter="${filterValue}"]`);
     if (activeOption) {
       activeOption.classList.add('active');
@@ -255,14 +255,14 @@ function setupProjectsFilter() {
   }
 
   // Add click event to filter options
-  projectsFilter.addEventListener('click', function(e) {
+  projectsFilter.addEventListener('click', function (e) {
     const filterOption = e.target.closest('.filter-option');
     if (!filterOption) return;
 
     e.preventDefault();
     const filterValue = filterOption.getAttribute('data-filter');
     filterProjects(filterValue);
-    
+
     // Close dropdown
     projectsFilter.classList.remove('show');
     filterToggle.classList.remove('active');
@@ -281,8 +281,6 @@ function setupFormValidation() {
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
       // Validate form
       const name = document.getElementById('name');
       const email = document.getElementById('email');
@@ -312,15 +310,35 @@ function setupFormValidation() {
         isValid = false;
       }
 
-      if (isValid) {
-        // Form is valid, submit it
-        alert('Message sent successfully!');
-        contactForm.reset();
-      } else {
-        // Show error message
+      if (!isValid) {
+        e.preventDefault();
         alert('Please fill all required fields correctly.');
       }
+      // If valid, the form will submit to FormSubmit automatically
     });
+  }
+}
+
+
+function scrollToSection(sectionId) {
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+    window.scrollTo({
+      top: targetSection.offsetTop - 60, // Adjust for header height
+      behavior: 'smooth'
+    });
+
+    // Update active nav item
+    navItems.forEach(navItem => navItem.classList.remove('active', 'instant-active'));
+    const activeNavItem = document.querySelector(`.command-item[href="#${sectionId}"]`);
+    if (activeNavItem) {
+      activeNavItem.classList.add('active', 'instant-active');
+    }
+
+    // Remove instant-active class after animation
+    setTimeout(() => {
+      if (activeNavItem) activeNavItem.classList.remove('instant-active');
+    }, 1000);
   }
 }
 
@@ -724,12 +742,12 @@ function renderProjects() {
   projectsContainer.appendChild(showMoreBtn);
 
   // Toggle functionality
-  showMoreBtn.addEventListener('click', function() {
+  showMoreBtn.addEventListener('click', function () {
     const isExpanded = projectsGrid.classList.toggle('expanded');
-    this.innerHTML = isExpanded 
-      ? '<i class="fas fa-chevron-up"></i> Show Less Projects' 
+    this.innerHTML = isExpanded
+      ? '<i class="fas fa-chevron-up"></i> Show Less Projects'
       : '<i class="fas fa-chevron-down"></i> Show More Projects';
-    
+
     // Update the gradient visibility
     updateProjectsGradient();
   });
@@ -739,7 +757,7 @@ function renderProjects() {
     const isExpanded = projectsGrid.classList.contains('expanded');
     const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--color-bg');
     const rgbValues = bgColor.match(/\d+/g);
-    
+
     if (rgbValues && !isExpanded) {
       const gradient = `linear-gradient(to bottom, rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 0) 0%, rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 0.9) 100%)`;
       projectsGrid.style.setProperty('--projects-gradient', gradient);
@@ -990,10 +1008,10 @@ function renderTechStack() {
   `;
   container.appendChild(header);
 
-  // Create tech stack container
-  const techContainer = document.createElement('div');
-  techContainer.className = 'tech-stack-container';
-  container.appendChild(techContainer);
+  // Create horizontal categories container
+  const categoriesContainer = document.createElement('div');
+  categoriesContainer.className = 'tech-categories-container';
+  container.appendChild(categoriesContainer);
 
   // Define categories in order we want them displayed
   const categories = [
@@ -1003,13 +1021,12 @@ function renderTechStack() {
     { id: 'infrastructure', title: 'DevOps & Infrastructure', icon: 'fas fa-cloud' },
   ];
 
-  // Render each category
-  categories.forEach((category, index) => {
+  // Render each category in columns
+  categories.forEach(category => {
     if (appData.techStack && appData.techStack[category.id]) {
-      // Category wrapper
-      const categoryWrapper = document.createElement('div');
-      categoryWrapper.className = 'tech-category-wrapper';
-      
+      const categoryColumn = document.createElement('div');
+      categoryColumn.className = 'tech-category-column';
+
       // Category header
       const categoryHeader = document.createElement('div');
       categoryHeader.className = 'tech-category-header';
@@ -1019,44 +1036,55 @@ function renderTechStack() {
           <h3>${category.title}</h3>
         </div>
       `;
-      categoryWrapper.appendChild(categoryHeader);
+      categoryColumn.appendChild(categoryHeader);
 
-      // Items container
-      const itemsContainer = document.createElement('div');
-      itemsContainer.className = 'tech-items-container';
-      
-      // Add tech items
+      // Chips container
+      const chipsContainer = document.createElement('div');
+      chipsContainer.className = 'tech-chips-container';
+
+      // Add tech chips
       appData.techStack[category.id].forEach(tech => {
-        const techItem = document.createElement('div');
-        techItem.className = 'tech-card';
-        techItem.innerHTML = `
-          <div class="tech-card-icon">
+        const techChip = document.createElement('div');
+        techChip.className = 'tech-chip';
+        techChip.setAttribute('data-tooltip', tech.name); // For mobile tooltip
+        techChip.innerHTML = `
+          <span class="tech-chip-icon">
             <i class="${tech.icon}"></i>
-          </div>
-          <div class="tech-card-name">${tech.name}</div>
+          </span>
+          <span class="tech-chip-name">${tech.name}</span>
         `;
-        itemsContainer.appendChild(techItem);
+        chipsContainer.appendChild(techChip);
       });
 
-      categoryWrapper.appendChild(itemsContainer);
-      techContainer.appendChild(categoryWrapper);
-
-      // Add styled divider between categories (except after last one)
-      if (index < categories.length - 1) {
-        const divider = document.createElement('div');
-        divider.className = 'category-divider';
-        divider.innerHTML = `
-          <div class="divider-line"></div>
-          <div class="divider-icon">
-            <i class="fas fa-ellipsis-h"></i>
-          </div>
-          <div class="divider-line"></div>
-        `;
-        techContainer.appendChild(divider);
-      }
+      categoryColumn.appendChild(chipsContainer);
+      categoriesContainer.appendChild(categoryColumn);
     }
   });
+
+  // Add mobile tooltip functionality
+  if (window.innerWidth <= 480) {
+    document.querySelectorAll('.tech-chip').forEach(chip => {
+      chip.addEventListener('click', function () {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'mobile-tech-tooltip';
+        tooltip.textContent = this.getAttribute('data-tooltip');
+        document.body.appendChild(tooltip);
+
+        // Position tooltip
+        const rect = this.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.top + window.scrollY - 40}px`;
+
+        // Remove after delay
+        setTimeout(() => {
+          tooltip.remove();
+        }, 2000);
+      });
+    });
+  }
 }
+
+
 
 // =====================
 // INITIALIZATION

@@ -76,20 +76,24 @@
     <div class="logo-container">
       <img src="assets/images/logo.png" alt="Tarvix Logo" class="logo-animation">
     </div>
-    <h1 class="hero-title">Flutter + Blockchain Specialists With Real-World Results</h1>
+    <h1 class="hero-title">Building the Future of Blockchain - Experts in Blockchain Development & Design.</h1>
     <p class="hero-subtitle">
-      8 Years | 12 Production Apps | 4 Industries
+      Official GUI developers for Pactus Blockchain + 11 other shipped projects
     </p>
+
+
     <div class="hero-buttons">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" onclick="scrollToSection('projects')">
         <i class="fas fa-code"></i>
         View Projects
       </button>
-      <button class="btn btn-outline">
+      <button class="btn btn-outline" onclick="scrollToSection('contact')">
         <i class="fas fa-paper-plane"></i>
         Contact Us
       </button>
     </div>
+
+
   </section>
 
   <!-- About Section (Dynamic from JSON) -->
@@ -206,19 +210,29 @@
           <div class="col-4">
             <div class="card">
               <div class="card-header">Send us a message</div>
+
               <div class="card-body">
-                <form id="contactForm" class="contact-form">
+                <!-- Contact Form -->
+                <form id="contactForm" class="contact-form"
+                  action="https://formsubmit.co/af8c21d6375f1ad158f88ed41cdc3da1" method="POST">
+                  <!-- Add these hidden fields for FormSubmit configuration -->
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_next" value="https://tarvix.org/thank-you.html">
+                  <!-- Replace with your thank you page -->
+                  <input type="hidden" name="_subject" value="New message from Tarvix website">
+
                   <div class="form-group">
                     <label for="name" class="form-label">Your Name</label>
-                    <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
                   </div>
                   <div class="form-group">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
+                      required>
                   </div>
                   <div class="form-group">
                     <label for="message" class="form-label">Message</label>
-                    <textarea id="message" class="form-input form-textarea" rows="4"
+                    <textarea id="message" name="message" class="form-input form-textarea" rows="4"
                       placeholder="Tell us about your project" required></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary">

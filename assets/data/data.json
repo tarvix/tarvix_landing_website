@@ -74,7 +74,7 @@
       ]
     },
     {
-      "name": "Iman Yarahmadi",
+      "name": "Iman",
       "role": "Flutter Developer",
       "bio": "I am a skilled mobile developer with experience in both native Android and Flutter development. I specialize in creating robust, high-performance applications with clean architecture and optimized state management. With experience in fintech, education, and service industries, I focus on delivering seamless user experiences while keeping up with the latest Flutter techniques.",
       "specialty": "State Management • Performance Optimization • Custom Package Development",
@@ -196,7 +196,7 @@
       "links": []
     },
     {
-      "name": "Sina Soujeh",
+      "name": "Sina",
       "role": "Product Designer",
       "bio": "I am a multidisciplinary product designer with expertise in UI/UX design and design systems. With experience across education, finance, and enterprise applications, I create intuitive interfaces that bridge user needs with business goals. My background in computer engineering gives me technical insight that enhances my design solutions.",
       "specialty": "Design Systems • Admin Panels • UX Research",
@@ -252,27 +252,30 @@
         "icon": "fa-rocket fa-fade",
         "animation": "fa-fade",
         "title": "Our Story",
-        "content": "Tarvix is a semi-independent dev team collaborating with Pactus blockchain. We specialize in Flutter and Fluent UI design systems."
+        "content": "Tarvix pioneers Flutter solutions where robust architecture meets real-world usability. As specialists in blockchain interfaces, we craft intuitive GUIs that simplify node management and decentralized workflows. Our cross-platform expertise delivers seamless experiences across desktop and mobile from a single codebase. We build complete ecosystems – from customer-facing apps to real-time logistics systems – all featuring modular design, hardware integrations, and enterprise-grade reliability. Every solution balances Flutter’s flexibility with production-ready stability, transforming complex requirements into fluid user experiences. This is development that works."
       },
       {
         "icon": "fa-gem fa-fade",
         "animation": "fa-fade",
         "title": "Our Values",
         "items": [
-          "Exceptional UX focus",
-          "Development transparency",
-          "Highest security standards",
-          "Close blockchain collaboration"
+          "Full lifecycle support: Design → Develop → Deploy → Maintain",
+          "Platform coverage: Windows/macOS/Linux/iOS/Android/Web from single codebase",
+          "Blockchain-ready: Web3.js, ethers.js, TON SDK integration",
+          "Scalable architecture: Modular, clean code for easy future updates",
+          "Production-proven: Battle-tested in retail, fintech, and Web3"
         ]
       },
       {
         "icon": "fa-bullseye fa-beat-fade",
         "animation": "fa-fade",
         "title": "Our Mission",
-        "content": "To create seamless dApp & GUI experiences that hide blockchain complexity behind beautiful, intuitive interfaces.",
+        "content": "At Tarvix, we build high-quality, cross-platform applications with speed, structure, and technical integrity. Whether in blockchain or beyond, our mission is to deliver modular, maintainable, and scalable software — fast. Backed by hands-on experience in Web3, logistics, and fintech, we support the entire development lifecycle: from UX-driven design to deployment and long-term maintenance. Our commitment is to code that works , everywhere, every time.",
         "tags": [
           "Flutter",
-          "Fluent UI",
+          "Devops and CI/CD",
+          "UI/UX",
+          "Retail & Logistics",
           "Blockchain"
         ]
       }
