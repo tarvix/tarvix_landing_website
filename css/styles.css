@@ -1389,41 +1389,106 @@ body.light-theme .tag {
 }
 
 /* Accent Color Picker */
+
+/* Color Picker Styling */
+/* Color Picker Container */
 .accent-colors {
-  background-color: var(--color-bg-card);
-  border-radius: 4px;
-  box-shadow: var(--color-shadow);
-  padding: var(--spacing-s);
-  margin-top: var(--spacing-s);
   display: none;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-s);
-  z-index: 1001;
+  position: fixed; /* Changed from absolute to fixed */
+  bottom: auto;
+  top: auto;
+  right: 20px; /* Adjusted from 0 to 20px */
+  max-height: calc(100vh - 20px); /* Ensure it doesn't exceed viewport height */
+  overflow-y: auto;
+  background: var(--color-bg-card);
   border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  margin-top: 8px;
+  /* Smart positioning */
+  max-width: calc(100vw - 40px); /* Ensure it doesn't exceed viewport width */
+  transform: translateY(10px); /* Small offset from button */
+}
+
+/* Position the palette above button if near bottom */
+@media (max-height: 600px) {
+  .accent-colors {
+    bottom: 60px; /* Position above button */
+    top: auto;
+  }
 }
 
 .accent-colors.show {
   display: grid;
+  animation: fadeIn 0.2s ease-out;
 }
 
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .accent-colors {
+    right: 10px;
+    left: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: calc(100vw - 20px);
+  }
+}
+
+.accent-colors.show {
+  display: grid;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Active state for color picker button */
+.accent-btn.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Color chips styling (same as before) */
 .accent-color {
   width: 24px;
   height: 24px;
-  border-radius: 2px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid var(--color-border);
+  transition: transform 0.2s;
+  border: 2px solid transparent;
 }
 
 .accent-color:hover {
   transform: scale(1.1);
-  border-color: var(--color-text-primary);
 }
 
 .accent-color.active {
   border-color: var(--color-text-primary);
-  transform: scale(1.1);
-  box-shadow: 0 0 0 1px var(--color-bg), 0 0 0 3px var(--color-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--color-bg);
+}
+
+
+/* Initially hide dark palette */
+.dark-palette {
+  display: none;
+}
+
+.light-theme .dark-palette {
+  display: none;
+}
+
+.dark-theme .light-palette {
+  display: none;
+}
+
+.dark-theme .dark-palette {
+  display: block;
 }
 
 

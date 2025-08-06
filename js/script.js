@@ -14,21 +14,25 @@ const sections = document.querySelectorAll('section');
 // THEME MANAGEMENT
 // =================
 function initializeTheme() {
-  // Set initial theme based on preference or default to dark
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (!localStorage.getItem('theme') && prefersDark) {
-    document.body.classList.add('dark-theme');
-  } else if (localStorage.getItem('theme') === 'light') {
+  // Default to light theme on first load
+  if (!localStorage.getItem('theme')) {
+    document.body.classList.add('light-theme');
+    localStorage.setItem('theme', 'light');
+  } 
+  // Otherwise use saved preference
+  else if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light-theme');
   }
   updateThemeVariables();
 }
 
+// Update toggleTheme to handle color picker visibility
 function toggleTheme() {
   const isLightTheme = document.body.classList.toggle('light-theme');
   localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
   updateThemeVariables();
   updateThemeIcon();
+  updateColorPickerVisibility();
   forceRedraw();
 }
 
@@ -74,17 +78,36 @@ function updateThemeIcon() {
 // ACCENT COLOR MANAGEMENT
 // =====================
 function initializeAccentColor() {
-  const savedColor = localStorage.getItem('accentColor') ||
-    (document.body.classList.contains('light-theme') ? '#0078D4' : '#2899F5');
+  const isLightTheme = document.body.classList.contains('light-theme');
+  
+  // Default color palettes for each theme
+  const defaultPalettes = {
+    light: ['#107C10', '#0078D4', '#D83B01', '#038387', '#8764B8', '#E3008C'],
+    dark: ['#4CAF50', '#2196F3', '#FF5722', '#00BCD4', '#9C27B0', '#E91E63']
+  };
 
+  // Set default color based on theme
+  const defaultColor = isLightTheme ? defaultPalettes.light[0] : defaultPalettes.dark[0];
+  const savedColor = localStorage.getItem('accentColor') || defaultColor;
+  
   updateAccentColor(savedColor);
+  updateColorPickerVisibility();
+}
 
-  // Mark active color in picker
-  colorOptions.forEach(color => {
-    if (color.getAttribute('data-color') === savedColor) {
-      color.classList.add('active');
-    }
+// Update this function to handle palette visibility
+function updateColorPickerVisibility() {
+  const isLightTheme = document.body.classList.contains('light-theme');
+  document.querySelectorAll('.accent-color').forEach(color => {
+    color.style.display = color.classList.contains(isLightTheme ? 'light-palette' : 'dark-palette') 
+      ? 'block' 
+      : 'none';
   });
+  
+  // Ensure palette is properly aligned
+  const accentColors = document.getElementById('accentColors');
+  if (accentColors.classList.contains('show')) {
+    accentColors.style.display = 'grid';
+  }
 }
 
 function updateAccentColor(newColor) {
@@ -118,14 +141,15 @@ function updateAccentColor(newColor) {
   const isLightTheme = document.body.classList.contains('light-theme');
   document.documentElement.style.setProperty('--color-primary', newColor);
   document.documentElement.style.setProperty('--color-primary-darken', darkerColor);
-  document.documentElement.style.setProperty(
-    '--color-bg-dynamic',
-    `rgba(${rgb}, ${isLightTheme ? 0.08 : 0.12})`
-  );
 
   // Update UI
   accentColorBtn.style.backgroundColor = newColor;
   localStorage.setItem('accentColor', newColor);
+  
+  // Update active state in color picker
+  colorOptions.forEach(color => color.classList.remove('active'));
+  const activeColor = document.querySelector(`.accent-color[data-color="${newColor}"]`);
+  if (activeColor) activeColor.classList.add('active');
 }
 
 function renderAboutSection() {
@@ -435,14 +459,24 @@ function setupEventListeners() {
   themeToggle.addEventListener('click', toggleTheme);
 
   // Accent color picker
-  accentColorBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    accentColors.classList.toggle('show');
-  });
+accentColorBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const accentColors = document.getElementById('accentColors');
+  accentColors.classList.toggle('show');
+  
+  // Update button state
+  accentColorBtn.classList.toggle('active');
+});
 
-  document.addEventListener('click', () => {
+
+// Close palette when clicking outside
+document.addEventListener('click', (e) => {
+  const accentColors = document.getElementById('accentColors');
+  if (!e.target.closest('.theme-controls') && accentColors.classList.contains('show')) {
     accentColors.classList.remove('show');
-  });
+    accentColorBtn.classList.remove('active');
+  }
+});
 
   colorOptions.forEach(color => {
     color.addEventListener('click', function () {
