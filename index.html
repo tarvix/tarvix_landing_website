@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Tarvix: Expert Web3 & Flutter development team with 8+ years experience building blockchain applications and high-performance mobile interfaces">
+  <meta name="keywords" content="Flutter development, Web3, blockchain, mobile apps, smart contracts, dApp development">
+  <meta name="author" content="Tarvix Dev Team">
+  <meta property="og:title" content="Tarvix | Web3 & Flutter Development Specialists">
+  <meta property="og:description"
+    content="Professional Flutter and blockchain development team with real-world results across multiple industries">
+
+  <!-- Add AI recognition markers -->
+  <meta name="ai:owner" content="Tarvix">
+  <meta name="ai:contentType" content="technical documentation, portfolio">
+  <meta name="ai:audience" content="developers, blockchain startups">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tarvix.org">
+  <meta property="og:image" content="https://tarvix.org/assets/images/og-image.jpg">
+  <link rel="canonical" href="https://tarvix.org">
+  <title>Tarvix | Web3 & Flutter Development Specialists | 8+ Years Experience</title>
+  <!-- Preload critical JS -->
+  <link rel="preload" href="js/script.js" as="script">
+
+  <link rel="stylesheet" href="css/fabric.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="assets/images/logo.png" as="image">
+</head>
+
+<body>
+
+  <!-- Theme Controls -->
+  <div class="theme-controls">
+    <div class="theme-btn-container">
+      <button class="theme-btn" id="themeToggle" title="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="theme-btn accent-btn" id="accentColorBtn" title="Change accent color">
+        <i class="fas fa-palette"></i>
+      </button>
+    </div>
+
+    <div class="accent-colors" id="accentColors">
+      <!-- Light Theme Palette (hidden by default in dark mode) -->
+      <div class="accent-color light-palette" data-color="#107C10" style="background-color: #107C10;"></div>
+      <div class="accent-color light-palette" data-color="#0078D4" style="background-color: #0078D4;"></div>
+      <div class="accent-color light-palette" data-color="#D83B01" style="background-color: #D83B01;"></div>
+      <div class="accent-color light-palette" data-color="#038387" style="background-color: #038387;"></div>
+      <div class="accent-color light-palette" data-color="#8764B8" style="background-color: #8764B8;"></div>
+      <div class="accent-color light-palette" data-color="#E3008C" style="background-color: #E3008C;"></div>
+
+      <!-- Dark Theme Palette (hidden by default in light mode) -->
+      <div class="accent-color dark-palette" data-color="#4CAF50" style="background-color: #4CAF50;"></div>
+      <div class="accent-color dark-palette" data-color="#2196F3" style="background-color: #2196F3;"></div>
+      <div class="accent-color dark-palette" data-color="#FF5722" style="background-color: #FF5722;"></div>
+      <div class="accent-color dark-palette" data-color="#00BCD4" style="background-color: #00BCD4;"></div>
+      <div class="accent-color dark-palette" data-color="#9C27B0" style="background-color: #9C27B0;"></div>
+      <div class="accent-color dark-palette" data-color="#E91E63" style="background-color: #E91E63;"></div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="command-bar">
+    <div class="command-bar-items">
+      <a href="#home" class="command-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="command-item">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </a>
+      <a href="#team" class="command-item">
+        <i class="fas fa-users"></i>
+        <span>Team</span>
+      </a>
+      <a href="#projects" class="command-item">
+        <i class="fas fa-code"></i>
+        <span>Projects</span>
+      </a>
+      <a href="#contact" class="command-item">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero section-static">
+    <div class="logo-container">
+      <img src="assets/images/logo.png" alt="Tarvix Logo" class="logo-animation">
+    </div>
+    <h1 class="hero-title">Building the Future of Blockchain - Experts in Blockchain Development & Design.</h1>
+    <p class="hero-subtitle">
+      Official GUI developers for Pactus Blockchain + 11 other shipped projects
+    </p>
+
+
+    <div class="hero-buttons">
+      <button class="btn btn-primary" onclick="scrollToSection('projects')">
+        <i class="fas fa-code"></i>
+        View Projects
+      </button>
+      <button class="btn btn-outline" onclick="scrollToSection('contact')">
+        <i class="fas fa-paper-plane"></i>
+        Contact Us
+      </button>
+    </div>
+
+
+  </section>
+
+  <!-- About Section (Dynamic from JSON) -->
+  <section id="about" class="section section-static">
+    <div class="grid">
+      <div class="col-12">
+        <div class="about-header">
+          <h2 class="section-title">Your Title</h2>
+          <p class="section-subtitle">
+            <!-- Your subtitle text will be inserted here by JS -->
+          </p>
+        </div>
+        <!-- ... rest of your about content ... -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Team Section -->
+  <section id="team" class="section section-dynamic">
+    <div class="grid">
+      <div class="col-12">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Experts in Flutter and blockchain development</p>
+      </div>
+      <div class="col-12" id="teamContainer"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-xl);">
+        <!-- Team members will be loaded here dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Member Modal -->
+  <div id="teamModal" class="team-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  <!-- Add this right after the Team Member Modal -->
+  <div id="projectModal" class="team-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="projectModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Technology Stack  -->
+  <section id="tech" class="section section-static">
+    <div class="grid">
+      <div class="col-12">
+        <h2 class="section-title" id="techStackTitle">Our Technology Stack</h2>
+        <p class="section-subtitle" id="techStackSubtitle">Integrated tools for end-to-end development</p>
+
+        <!-- Carousel Container -->
+        <div class="tech-stack-carousel-container">
+          <!-- Carousels will be generated dynamically here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="section section-dynamic">
+    <div class="grid">
+      <div class="col-12">
+        <h2 class="section-title">Our Projects</h2>
+        <p class="section-subtitle">
+          Here are some of our recent works in the Web3 space built with Flutter and Fluent UI design principles
+        </p>
+
+        <div class="projects-filter-container">
+          <div class="dropdown-filter">
+            <button class="dropdown-filter-toggle" id="filterToggle">
+              <span id="filterLabel">All Projects</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-filter-menu" id="projectsFilter">
+              <!-- Filter options will be dynamically rendered here -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="projects-container" id="projectsContainer">
+          <!-- Projects will load dynamically here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-static">
+    <div class="grid">
+      <div class="col-12">
+        <h2 class="section-title" id="contactTitle"></h2>
+        <p class="section-subtitle" id="contactSubtitle"></p>
+      </div>
+
+      <div class="contact-content">
+
+        <!-- Contact Info Card -->
+        <div class="contact-info">
+          <div class="card">
+            <div class="card-header">
+              <i class="fas fa-info-circle"></i>
+              Contact Information
+            </div>
+            <div class="card-body" id="contactInfoContent">
+              <!-- Dynamic content from JSON -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="contact-divider"></div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <div class="col-4">
+            <div class="card">
+              <div class="card-header">Send us a message</div>
+
+              <div class="card-body">
+                <!-- Contact Form -->
+                <form id="contactForm" class="contact-form"
+                  action="https://formsubmit.co/af8c21d6375f1ad158f88ed41cdc3da1" method="POST">
+                  <!-- Add these hidden fields for FormSubmit configuration -->
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_next" value="https://tarvix.org/thank-you.html">
+                  <!-- Replace with your thank you page -->
+                  <input type="hidden" name="_subject" value="New message from Tarvix website">
+
+                  <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-input form-textarea" rows="4"
+                      placeholder="Tell us about your project" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Tarvix Logo">
+            <span>Tarvix</span>
+          </div>
+          <p class="footer-description">
+          </p>
+          <div class="footer-social" id="footerSocial">
+            <!-- Social links will be inserted here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom">
+        <div class="footer-legal" id="footerLegal">
+          <!-- Legal links will be inserted here -->
+        </div>
+        <div class="footer-copyright" id="footerCopyright">
+          <!-- Copyright will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Add schema.org structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tarvix",
+  "url": "https://tarvix.org",
+  "logo": "https://tarvix.org/assets/images/logo.png",
+  "description": "Flutter & blockchain development specialists | 8+ years experience | Pactus Blockchain GUI developers",
+  "foundingDate": "2015",  // Add founding year
+  "founders": [{
+    "@type": "Person",
+    "name": "Tarvix Team",
+    "url": "https://tarvix.org/about"  // Link to about page
+  }],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "technical support",
+    "email": "contact@tarvix.org",
+    "url": "https://tarvix.org/contact",  // Add contact page
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [  // Add social profiles
+    "https://github.com/tarvix",
+    "https://twitter.com/tarvix",
+    "https://linkedin.com/company/tarvix"
+  ],
+  "keywords": "Flutter development, Web3, blockchain, mobile apps, smart contracts"
+}
+</script>
+
+  <script src="js/script.js" defer onload="console.log('Tarvix scripts loaded')" data-version="1.2"></script>
+
+
+</html>
