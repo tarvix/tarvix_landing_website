@@ -1,0 +1,14 @@
+# Ignore all ZIP files recursively
+*.zip
+**/*.zip
+
+# Additional common ignores for Flutter/Web projects
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Optional: Ignore specific common zip files
+release.zip
+build.zip
+backup.zip
