@@ -22,7 +22,7 @@
   <meta property="og:image" content="https://tarvix.org/assets/images/og-image.jpg">
   <link rel="canonical" href="https://tarvix.org">
   <title>Tarvix | Web3 & Flutter Development Specialists | 8+ Years Experience</title>
-    <!-- Preload critical JS -->
+  <!-- Preload critical JS -->
   <link rel="preload" href="js/script.js" as="script">
 
   <link rel="stylesheet" href="css/fabric.min.css">
@@ -116,7 +116,17 @@
 
   <!-- About Section (Dynamic from JSON) -->
   <section id="about" class="section section-static">
-    <!-- Content will be loaded dynamically from JSON -->
+    <div class="grid">
+      <div class="col-12">
+        <div class="about-header">
+          <h2 class="section-title">Your Title</h2>
+          <p class="section-subtitle">
+            <!-- Your subtitle text will be inserted here by JS -->
+          </p>
+        </div>
+        <!-- ... rest of your about content ... -->
+      </div>
+    </div>
   </section>
 
 
@@ -328,9 +338,7 @@
 }
 </script>
 
-  <script src="js/script.js" defer 
-          onload="console.log('Tarvix scripts loaded')" 
-          data-version="1.2"></script>
+  <script src="js/script.js" defer onload="console.log('Tarvix scripts loaded')" data-version="1.2"></script>
 
 
 </html>

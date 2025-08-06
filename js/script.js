@@ -18,7 +18,7 @@ function initializeTheme() {
   if (!localStorage.getItem('theme')) {
     document.body.classList.add('light-theme');
     localStorage.setItem('theme', 'light');
-  } 
+  }
   // Otherwise use saved preference
   else if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light-theme');
@@ -79,7 +79,7 @@ function updateThemeIcon() {
 // =====================
 function initializeAccentColor() {
   const isLightTheme = document.body.classList.contains('light-theme');
-  
+
   // Default color palettes for each theme
   const defaultPalettes = {
     light: ['#107C10', '#0078D4', '#D83B01', '#038387', '#8764B8', '#E3008C'],
@@ -89,7 +89,7 @@ function initializeAccentColor() {
   // Set default color based on theme
   const defaultColor = isLightTheme ? defaultPalettes.light[0] : defaultPalettes.dark[0];
   const savedColor = localStorage.getItem('accentColor') || defaultColor;
-  
+
   updateAccentColor(savedColor);
   updateColorPickerVisibility();
 }
@@ -98,11 +98,11 @@ function initializeAccentColor() {
 function updateColorPickerVisibility() {
   const isLightTheme = document.body.classList.contains('light-theme');
   document.querySelectorAll('.accent-color').forEach(color => {
-    color.style.display = color.classList.contains(isLightTheme ? 'light-palette' : 'dark-palette') 
-      ? 'block' 
+    color.style.display = color.classList.contains(isLightTheme ? 'light-palette' : 'dark-palette')
+      ? 'block'
       : 'none';
   });
-  
+
   // Ensure palette is properly aligned
   const accentColors = document.getElementById('accentColors');
   if (accentColors.classList.contains('show')) {
@@ -145,7 +145,7 @@ function updateAccentColor(newColor) {
   // Update UI
   accentColorBtn.style.backgroundColor = newColor;
   localStorage.setItem('accentColor', newColor);
-  
+
   // Update active state in color picker
   colorOptions.forEach(color => color.classList.remove('active'));
   const activeColor = document.querySelector(`.accent-color[data-color="${newColor}"]`);
@@ -157,11 +157,11 @@ function renderAboutSection() {
   if (!aboutSection || !appData.about) return;
 
   const aboutHeader = `
-    <div class="about-header">
-      <h2 class="section-title">${appData.about.title} <span class="gradient-text">Tarvix</span></h2>
-      <p class="section-subtitle">${appData.about.subtitle}</p>
-    </div>
-  `;
+  <div class="about-header">
+    <h2 class="section-title">${appData.about.title}</h2>
+    <p class="section-subtitle">${appData.about.subtitle}</p>
+  </div>
+`;
 
   const renderCards = appData.about.cards.map(card => {
     const itemsHTML = card.items ? `
@@ -459,24 +459,24 @@ function setupEventListeners() {
   themeToggle.addEventListener('click', toggleTheme);
 
   // Accent color picker
-accentColorBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const accentColors = document.getElementById('accentColors');
-  accentColors.classList.toggle('show');
-  
-  // Update button state
-  accentColorBtn.classList.toggle('active');
-});
+  accentColorBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const accentColors = document.getElementById('accentColors');
+    accentColors.classList.toggle('show');
+
+    // Update button state
+    accentColorBtn.classList.toggle('active');
+  });
 
 
-// Close palette when clicking outside
-document.addEventListener('click', (e) => {
-  const accentColors = document.getElementById('accentColors');
-  if (!e.target.closest('.theme-controls') && accentColors.classList.contains('show')) {
-    accentColors.classList.remove('show');
-    accentColorBtn.classList.remove('active');
-  }
-});
+  // Close palette when clicking outside
+  document.addEventListener('click', (e) => {
+    const accentColors = document.getElementById('accentColors');
+    if (!e.target.closest('.theme-controls') && accentColors.classList.contains('show')) {
+      accentColors.classList.remove('show');
+      accentColorBtn.classList.remove('active');
+    }
+  });
 
   colorOptions.forEach(color => {
     color.addEventListener('click', function () {
@@ -866,8 +866,8 @@ function openProjectModal(project) {
     </div>
   ` : '';
 
-// Generate links HTML
-const linksHTML = project.links ? `
+  // Generate links HTML
+  const linksHTML = project.links ? `
   <div class="project-section">
     <h4>Project Links</h4>
     <div class="project-links">

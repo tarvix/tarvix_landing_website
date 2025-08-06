@@ -2122,6 +2122,28 @@ body.light-theme .tag {
   position: relative;
 }
 
+/* About section subtitle styling */
+.about-header .section-subtitle {
+  max-width: 550px; /* Maximum width for desktop */
+  width: 100%; /* Responsive behavior */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Or 'left' based on your design */
+  line-height: 1.5;
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    max-width: 90%; /* Wider relative width on mobile */
+    font-size: 0.9rem; /* Optional: Slightly smaller text on mobile */
+    padding: 0 15px; /* Optional: Add side padding */
+  }
+  
+  /* Tablet/mid-size screens */
+  @media (min-width: 601px) and (max-width: 900px) {
+    max-width: 80%;
+  }
+}
+
 .about-header::after {
   content: '';
   display: block;
