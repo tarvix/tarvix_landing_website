@@ -12,7 +12,10 @@ const sections = document.querySelectorAll('section');
 
 // =================
 // THEME MANAGEMENT
-// =================
+/**
+ * Initializes the application's theme based on the user's saved preference or defaults to light mode.
+ * Applies the appropriate theme class to the document body and updates related CSS variables.
+ */
 function initializeTheme() {
   // Default to light theme on first load
   if (!localStorage.getItem('theme')) {
@@ -26,7 +29,9 @@ function initializeTheme() {
   updateThemeVariables();
 }
 
-// Update toggleTheme to handle color picker visibility
+/**
+ * Toggles between light and dark themes, updates theme-related UI elements, and persists the user's preference.
+ */
 function toggleTheme() {
   const isLightTheme = document.body.classList.toggle('light-theme');
   localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
@@ -36,6 +41,11 @@ function toggleTheme() {
   forceRedraw();
 }
 
+/**
+ * Updates CSS custom properties to match the current theme.
+ *
+ * Applies the appropriate color variables for either the light or dark theme and updates the accent color button background to reflect the active theme.
+ */
 function updateThemeVariables() {
   const isLightTheme = document.body.classList.contains('light-theme');
   const suffix = isLightTheme ? 'light' : 'dark';
@@ -67,6 +77,9 @@ function updateThemeVariables() {
   accentColorBtn.style.backgroundColor = `var(--color-primary-${suffix})`;
 }
 
+/**
+ * Updates the theme toggle button icon to reflect the current theme.
+ */
 function updateThemeIcon() {
   const icon = themeToggle.querySelector('i');
   const isLightTheme = document.body.classList.contains('light-theme');
@@ -76,7 +89,11 @@ function updateThemeIcon() {
 
 // =====================
 // ACCENT COLOR MANAGEMENT
-// =====================
+/**
+ * Initializes the accent color based on stored user preference or the current theme's default palette.
+ * 
+ * Sets the accent color from localStorage if available; otherwise, applies the default color for the active theme. Updates the accent color UI and palette visibility accordingly.
+ */
 function initializeAccentColor() {
   const isLightTheme = document.body.classList.contains('light-theme');
 
@@ -94,7 +111,11 @@ function initializeAccentColor() {
   updateColorPickerVisibility();
 }
 
-// Update this function to handle palette visibility
+/**
+ * Updates the visibility of accent color options based on the current theme.
+ *
+ * Shows only the accent color palette corresponding to the active theme (light or dark) and ensures the palette container is displayed as a grid when active.
+ */
 function updateColorPickerVisibility() {
   const isLightTheme = document.body.classList.contains('light-theme');
   document.querySelectorAll('.accent-color').forEach(color => {
@@ -110,6 +131,13 @@ function updateColorPickerVisibility() {
   }
 }
 
+/**
+ * Updates the application's accent color, applying the new color to CSS variables, UI elements, and persistent storage.
+ * 
+ * Parses the provided hex color, updates related CSS custom properties for dynamic backgrounds, shadows, and color variants, refreshes the accent color button, saves the selection in localStorage, and highlights the active color in the color picker.
+ * 
+ * @param {string} newColor - The new accent color in hexadecimal format (e.g., "#FF5733").
+ */
 function updateAccentColor(newColor) {
   const r = parseInt(newColor.substring(1, 3), 16);
   const g = parseInt(newColor.substring(3, 5), 16);
@@ -152,6 +180,11 @@ function updateAccentColor(newColor) {
   if (activeColor) activeColor.classList.add('active');
 }
 
+/**
+ * Renders the About section of the page using data from the application state.
+ *
+ * Dynamically creates the About section header and a set of cards, each displaying an icon, title, content, optional list items, and tags, based on the data provided in `appData.about`.
+ */
 function renderAboutSection() {
   const aboutSection = document.getElementById('about');
   if (!aboutSection || !appData.about) return;
@@ -204,7 +237,11 @@ function renderAboutSection() {
 
 // =====================
 // PROJECTS FILTER
-// =====================
+/**
+ * Sets up the project category filter UI, enabling users to filter displayed projects by category.
+ *
+ * Dynamically generates filter options based on available project categories, manages dropdown visibility, and updates the displayed projects and active filter label when a filter is selected. Initializes the filter to show all projects by default.
+ */
 function setupProjectsFilter() {
   const projectsContainer = document.getElementById('projectsContainer');
   const projectsFilter = document.getElementById('projectsFilter');
@@ -255,7 +292,10 @@ function setupProjectsFilter() {
     filterToggle.classList.remove('active');
   });
 
-  // Project filtering function
+  /**
+   * Filters displayed project cards by the selected category and updates the active filter UI.
+   * @param {string} filterValue - The category to filter projects by, or 'all' to show all projects.
+   */
   function filterProjects(filterValue) {
     const projects = projectsContainer.querySelectorAll('.col-4');
 
@@ -299,7 +339,9 @@ function setupProjectsFilter() {
 
 // =====================
 // FORM VALIDATION
-// =====================
+/**
+ * Sets up client-side validation for the contact form, highlighting invalid fields and preventing submission if required fields are missing or the email format is incorrect.
+ */
 function setupFormValidation() {
   const contactForm = document.getElementById('contactForm');
 
@@ -344,6 +386,13 @@ function setupFormValidation() {
 }
 
 
+/**
+ * Smoothly scrolls to the specified section and updates the active navigation item.
+ * 
+ * Scrolls the viewport to the section with the given ID, offsetting for the header height, and highlights the corresponding navigation item with an animation effect.
+ * 
+ * @param {string} sectionId - The ID of the section to scroll to.
+ */
 function scrollToSection(sectionId) {
   const targetSection = document.getElementById(sectionId);
   if (targetSection) {
@@ -368,7 +417,9 @@ function scrollToSection(sectionId) {
 
 // =====================
 // SMOOTH SCROLLING
-// =====================
+/**
+ * Enables smooth scrolling to page sections when navigation items are clicked and updates the active navigation state.
+ */
 function setupSmoothScrolling() {
   navItems.forEach(item => {
     item.addEventListener('click', function (e) {
@@ -397,7 +448,12 @@ function setupSmoothScrolling() {
 
 // =====================
 // SCROLL HANDLING
-// =====================
+/**
+ * Updates navigation item active states based on the current scroll position.
+ *
+ * Highlights the navigation item corresponding to the section currently in view.
+ * When scrolled to the bottom of the page, ensures the "Contact" section's navigation item is active.
+ */
 function handleScroll() {
   const scrollPos = window.scrollY || document.documentElement.scrollTop;
   const windowHeight = window.innerHeight;
@@ -423,7 +479,12 @@ function handleScroll() {
 
 // =====================
 // UTILITY FUNCTIONS
-// =====================
+/**
+ * Returns a hex color string lightened or darkened by a given percentage.
+ * @param {string} color - The base color in hexadecimal format (e.g., "#ff0000").
+ * @param {number} percent - The percentage to lighten (positive) or darken (negative) the color.
+ * @return {string} The resulting hex color string after shading.
+ */
 function shadeColor(color, percent) {
   let R = parseInt(color.substring(1, 3), 16);
   let G = parseInt(color.substring(3, 5), 16);
@@ -444,6 +505,11 @@ function shadeColor(color, percent) {
   return `#${RR}${GG}${BB}`;
 }
 
+/**
+ * Forces a CSS animation redraw on the document body.
+ *
+ * Temporarily disables and re-enables the body's animation property to ensure style changes or animations are immediately applied.
+ */
 function forceRedraw() {
   document.body.style.animation = 'none';
   requestAnimationFrame(() => {
@@ -453,7 +519,9 @@ function forceRedraw() {
 
 // =====================
 // EVENT LISTENERS
-// =====================
+/**
+ * Attaches event listeners for theme toggling, accent color selection, closing the color palette, color option selection, and window scroll and resize events to manage UI interactions.
+ */
 function setupEventListeners() {
   // Theme toggle
   themeToggle.addEventListener('click', toggleTheme);
@@ -492,6 +560,11 @@ function setupEventListeners() {
 }
 
 
+/**
+ * Renders team member cards in the team section using data from `appData.team`.
+ *
+ * Each card displays the member's avatar, name, role, specialties, and a condensed bio preview (up to three lines with formatting). Includes a button to open a detailed modal for each member.
+ */
 function renderTeamMembers() {
   const teamContainer = document.getElementById('teamContainer');
   if (!teamContainer || !appData.team) return;
@@ -555,7 +628,13 @@ function renderTeamMembers() {
   });
 }
 
-// Modal function (in English as requested)
+/**
+ * Opens a modal displaying detailed information about a team member.
+ * 
+ * Populates the modal with the member's avatar, name, role, specialty, formatted biography, key experience, technical skills, contributions, education, and social links. Disables page scrolling while the modal is open and restores it upon closing. The modal can be closed by clicking the close button or clicking outside the modal content.
+ * 
+ * @param {Object} member - The team member object containing details to display in the modal.
+ */
 function openTeamModal(member) {
   const modal = document.getElementById('teamModal');
   const modalContent = document.getElementById('modalContent');
@@ -671,6 +750,11 @@ function openTeamModal(member) {
     }
   });
 }
+/**
+ * Renders the contact section with title, subtitle, and contact information using data from the application state.
+ *
+ * Populates the contact section's header and contact info items with icons and text. If required data or DOM elements are missing, the function exits without making changes.
+ */
 function renderContactSection() {
   if (!appData.contact || !appData.footer?.contactInfo) return;
 
@@ -705,6 +789,11 @@ function renderContactSection() {
 // =====================
 let appData = {};
 
+/**
+ * Loads application data from a JSON file and initializes all UI sections with the loaded content.
+ * 
+ * Fetches data asynchronously, updates the global data object, and triggers rendering of the About, Team, Projects, Footer, Tech Stack, and Contact sections. Also sets up the project filtering UI after projects are rendered.
+ */
 async function loadAppData() {
   try {
     const response = await fetch('assets/data/data.json');
@@ -724,6 +813,11 @@ async function loadAppData() {
   }
 }
 
+/**
+ * Renders the projects section by creating project cards from loaded data, including category tags and a details button for each project.
+ *
+ * Adds a "Show More/Less Projects" toggle to expand or collapse the project grid, and dynamically updates a gradient overlay based on the current theme and grid state.
+ */
 function renderProjects() {
   const projectsContainer = document.getElementById('projectsContainer');
   if (!projectsContainer || !appData.projects) return;
@@ -812,6 +906,13 @@ function renderProjects() {
 }
 
 
+/**
+ * Displays a modal with detailed information about a project, including overview, goals, achievements, metrics, technologies, team members, and relevant links.
+ * 
+ * Opens the project modal, populates it with the provided project's data, and disables page scrolling while the modal is active. The modal can be closed by clicking the close button or clicking outside the modal.
+ * 
+ * @param {Object} project - The project object containing details to display in the modal.
+ */
 function openProjectModal(project) {
   const modal = document.getElementById('projectModal');
   const modalContent = document.getElementById('projectModalContent');
@@ -948,7 +1049,11 @@ function openProjectModal(project) {
   });
 }
 
-// Helper function to get appropriate icons for technologies
+/**
+ * Returns the FontAwesome icon class for a given technology name.
+ * @param {string} techName - The name of the technology.
+ * @return {string} The FontAwesome icon class corresponding to the technology, or a default icon if not found.
+ */
 function getTechIcon(techName) {
   const icons = {
     'Flutter': 'fab fa-flutter',
@@ -965,6 +1070,12 @@ function getTechIcon(techName) {
   return icons[techName] || 'fas fa-check-circle';
 }
 
+/**
+ * Renders the footer section of the web application using data from the appData object.
+ *
+ * Populates the footer with description, social links, quick links, contact information, legal links, and copyright.
+ * Only updates elements if corresponding data is available in appData.footer.
+ */
 function renderFooter() {
   if (!appData.footer) return;
 
@@ -1027,6 +1138,11 @@ function renderFooter() {
   }
 }
 
+/**
+ * Renders the technology stack section with categorized technology chips and icons.
+ *
+ * Displays frontend, backend, design, and infrastructure technologies in columns, each with an icon and name. Adds mobile-friendly tooltips for technology chips on small screens.
+ */
 function renderTechStack() {
   const techStackSection = document.getElementById('tech');
   if (!techStackSection || !appData.techStack) return;
